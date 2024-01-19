@@ -16,7 +16,7 @@ Welcome to , your one-stop destination for premium electronic products and servi
 
 ## Overview
 
-Electronic Emporium is an online store dedicated to providing a curated selection of high-quality electronic products. Our focus includes iPhones, Macs, Computers, AirPods, and associated services like repairs and maintenance.
+-  is an online store dedicated to providing a curated selection of high-quality electronic products. Our focus includes iPhones, Macs, Computers, AirPods, and associated services like repairs and maintenance.
 
 ## Features
 
