@@ -1,11 +1,14 @@
+
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
-  color-scheme: light dark;
-  background-color: #fff;
-  color: gray;
+;
+  background-color: #b2adadfa;
+  color: #ffff;
+  /* background-color: #0F0F0F; */
+  /* color: #F0FFF0; */
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -15,7 +18,7 @@
 
 a {
   font-weight: 500;
-  color: gray;
+  color: #F0FFF0;
   text-decoration: inherit;
 }
 a:hover {

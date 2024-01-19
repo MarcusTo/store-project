@@ -14,6 +14,6 @@
   </script> 
   
   <style scoped>
-  /* Component styles go here */
-  </style>
+
+ </style>
   

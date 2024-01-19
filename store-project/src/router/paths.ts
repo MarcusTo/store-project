@@ -1,19 +1,21 @@
 export enum ROUTE_PATHS {
+  HOME = "/",
+  
+  PRODUCTS = "/products",
+  PRODUCT_DETAILS = "/products/:id",
+
+  CART = "/cart",
+  CHECKOUT = "/checkout",
+  
   LOGIN = "/login",
-  RESET_PASSWORD = "/reset-password",
-
-  HOME="/",
+  REGISTER = "/register",
+  
+  PROFILE = "/profile",
+  
+  ORDERS = "/orders",
+  
   ABOUT = "/about",
-  PROFILE="/profile"
-//   FORM = "/form/overview",
-//   FORM_DEFINE_TOPICS = "/form/definetopics",
-//   POLICIES = "/form/policies/:id([0-9a-f-]+)",
-//   METRICS = "/form/metrics/:id([0-9a-f-]+)",
-//   ARAT = "/form/arat/:id([0-9a-f-]+)",
-//   DOFP = "/form/dofp/:id([0-9a-f-]+)",
-//   MIRAO = "/form/mirao/:id([0-9a-f-]+)",
-
-//   DASHBOARD = "/haldus",
+  CONTACT = "/contact",
 }
 export enum ROUTE_PATHS_NO_REGEX {
 //   POLICIES = "/form/policies/",
