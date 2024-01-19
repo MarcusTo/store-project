@@ -25,7 +25,32 @@ const routes: Array<RouteRecordRaw> = [
     meta: {
       breadcrumb: [{ label: "Profile", route: "/profile" }],
     },
+  },
+  {
+    path: ROUTE_PATHS.PRODUCTS,
+    name: ROUTE_PATHS.PRODUCTS,
+    component: () => import("@/views/Products.vue"),
+    meta: {
+      breadcrumb: [{ label: "Products", route: "/products" }],
+    },
+  },
+  {
+    path: ROUTE_PATHS.CART,
+    name: ROUTE_PATHS.CART,
+    component: () => import("@/views/Cart.vue"),
+    meta: {
+      breadcrumb: [{ label: "Cart", route: "/cart" }],
+    },
+  },
+  {
+    path: ROUTE_PATHS.ORDERS,
+    name: ROUTE_PATHS.ORDERS,
+    component: () => import("@/views/Orders.vue"),
+    meta: {
+      breadcrumb: [{ label: "Orders", route: "/orders" }],
+    },
   }
+
 //   },
 //   {
 //     path: "/:pathMatch(.*)*",

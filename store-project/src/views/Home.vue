@@ -1,18 +1,65 @@
 <template>
-  <NavBarComp/>
-    
-  
   <div>
-    <h1>Home Page</h1>
-    <p>This is the home page content.</p>
+    <NavBarComp />
+    <div class="header">
+      <h4 style="color: #ffff;">Enim ostetud</h4>
+      <div class="product-list">
+        <ProductItem v-for="product in products" :key="product.id" :product="product" @add-to-cart="addToCart" />
+      </div>
+    </div>
   </div>
 </template>
 
-<script setup lang="ts">
+<script>
 import NavBarComp from "@/components/NavBarComp.vue";
+import ProductItem from "@/components/ProductItem.vue";
 
-</script> 
+export default {
+  components: {
+    NavBarComp,
+    ProductItem,
+  },
+  data() {
+    return {
+      products: [
+        {
+          id: 1,
+          name: 'Phone Model 1',
+          image: 'src/assets/img/phonePic.png',
+          price: '990€',
+        },
+        {
+          id: 2,
+          name: 'Phone Model 1',
+          image: 'src/assets/img/phonePic.png',
+          price: '799€',
+        },
+        {
+          id: 3,
+          name: 'Phone Model 1',
+          image: 'src/assets/img/phonePic.png',
+          price: '999€',
+        },
+        {
+          id: 4,
+          name: 'Phone Model 1',
+          image: 'src/assets/img/phonePic.png',
+          price: '899€',
+        }
+      ],
+    };
+  },
+};
+</script>
 
 <style scoped>
-/* Component styles go here */
+.header {
+  text-align: center;
+  color: #ffff;
+}
+.product-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
 </style>

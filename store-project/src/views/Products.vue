@@ -15,4 +15,6 @@ import NavBarComp from "@/components/NavBarComp.vue";
 </script>
 
 <style scoped>
+
+
 </style>
