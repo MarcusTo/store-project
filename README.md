@@ -1,7 +1,7 @@
 
 # Online Electronics Store
 
-Welcome to , your one-stop destination for premium electronic products and services.
+Welcome to your one-stop destination for premium electronic products and services.
 
 ## Table of Contents
 
