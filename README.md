@@ -21,10 +21,10 @@ Welcome to , your one-stop destination for premium electronic products and servi
 ## Features
 
 - **Extensive Product Catalog:**
-  - iPhones
-  - Macs
-  - Computers
-  - AirPods
+  - Apple / Android devices
+  - Product keys 
+  - Laptops, Desktops
+  - Wireless earbuds - Android and Apple
   - Accessories
 
 - **Service Offerings:**
