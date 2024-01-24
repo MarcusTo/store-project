@@ -2,36 +2,31 @@
   <NavBarComp />
 
   <div class="about">
-    <h1>Ettevõttest</h1>
+    <h2>Ettevõttest</h2>
 
     <p>
-      Tere tulemast , Eesti juhtivasse elektroonikatoodete ja
-      teenuste ettevõttesse! Oleme uhked selle üle, et pakume laia valikut
-      nutitelefone, arvuteid, kõrvaklappe ning nendega seotud teenuseid, mis
-      vastavad teie digitaalsetele vajadustele.
-    </p>
-    <p>
-       alustas oma teekonda 2004 aastal ja oleme
+      Tere tulemast , Eesti juhtivasse elektroonikatoodete ja teenuste
+      ettevõttesse! Oleme uhked selle üle, et pakume laia valikut nutitelefone,
+      arvuteid, kõrvaklappe ning nendega seotud teenuseid, mis vastavad teie
+      digitaalsetele vajadustele. alustas oma teekonda 2004 aastal ja oleme
       pühendunud kvaliteetsete elektroonikaseadmete pakkumisele koos tipptasemel
-      teenindusega. Meie eesmärk on tuua tipptehnoloogia otse teie käeulatusse,
-      pakkudes samal ajal personaalset klienditeenindust.
+      teenindusega.
     </p>
     <p>
-      Meie tootevalik hõlmab laias valikus nutitelefone erinevatest
-      tippmarkidest, arvuteid igapäevaseks kasutamiseks ning kõrvaklappe, mis
-      pakuvad suurepärast helikvaliteeti. Lisaks toodetele pakume ka
-      mitmesuguseid teenuseid, sealhulgas seadmete remonti, tarkvara uuendamist
-      ja tehnilist tuge.
-    </p>
-    <p>
-      Oleme pühendunud teie rahulolule ning usume, et meie pühendumus
-      kvaliteedile ja tipptasemel teenustele muudab meid teie usaldusväärseks
-      partneriks digitaalses maailmas. Täname, et valisite [Company Name]!
+      Meie eesmärk on tuua tipptehnoloogia otse teie käeulatusse, pakkudes samal
+      ajal personaalset klienditeenindust. Meie tootevalik hõlmab laias valikus
+      nutitelefone erinevatest tippmarkidest, arvuteid igapäevaseks kasutamiseks
+      ning kõrvaklappe, mis pakuvad suurepärast helikvaliteeti. Lisaks toodetele
+      pakume ka mitmesuguseid teenuseid, sealhulgas seadmete remonti, tarkvara
+      uuendamist. Oleme pühendunud teie rahulolule ning usume, et meie
+      pühendumus kvaliteedile ja tipptasemel teenustele muudab meid teie
+      usaldusväärseks partneriks digitaalses maailmas. Täname, et valisite
+      [Company Name]! ja tehnilist tuge.
     </p>
 
-    <h1>Teenused</h1>
+    <h2>Teenused</h2>
 
-    <h1>Kontakt</h1>
+    <h2>Kontakt</h2>
 
     <p style="font-weight: bold">KÕIGE KÕVEM POOD MAAILMAS</p>
     <p><i class="pi pi-home"></i> Aia 5, Tallinn, Estonia</p>
@@ -46,8 +41,9 @@ import NavBarComp from "@/components/NavBarComp.vue";
 
 <style>
 .about {
-  margin-top: 20px; /* Adjust the margin-top value as needed */
-  margin-bottom: 20px; /* Add margin at the bottom if desired */
+  display: block;
+  margin-top: 60px; /* Adjust the margin-top value as needed */
+  margin-bottom: 60px; /* Add margin at the bottom if desired */
   text-align: center;
 }
 

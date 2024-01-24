@@ -1,5 +1,4 @@
-<!-- ProductItem.vue -->
-<template>
+  <template>
     <div class="product-item">
       <img :src="product.image" alt="Product Image" />
       <div class="product-details">
@@ -13,7 +12,9 @@
     </div>
   </template>
 
+
 <script>
+
 export default {
   props: {
     product: Object,

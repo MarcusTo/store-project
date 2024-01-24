@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="navbar" style="width: 100%">
+    <div class="navbar" style="width: 100%; display: flex; justify-content: space-between;">
       <ul class="ul">
         <li class="custom-list-item">
           <RouterLink to="/">Home</RouterLink>
@@ -9,15 +9,7 @@
         <li class="custom-list-item">
           <RouterLink to="/products">Tooted</RouterLink>
         </li>
-
-        <li class="custom-list-item">
-          <RouterLink to="/cart">Ostukorv</RouterLink>
-        </li>
-
-        <li class="custom-list-item">
-          <RouterLink to="/orders">Tellimused</RouterLink>
-        </li>
-
+        
         <li class="custom-list-item">
           <RouterLink to="/about">Ettevõttest</RouterLink>
         </li>
@@ -25,21 +17,34 @@
           <RouterLink to="/profile">Profiil</RouterLink>
         </li>
       </ul>
+
+      <div>
+        <RouterLink to="/orders">
+          <button class="button">
+            <i class="pi pi-shopping-cart"></i>
+          </button>
+        </RouterLink>
+      </div>
     </div>
   </div>
 </template>
 
 <style>
+
 .navbar {
-  color: #888;
+  top: 0;
+  left: 0;
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px; /* Add some padding for better appearance */
-  position: absolute;
-  width: 100%;
-  top: 0;
-  left: 0px;
+  /* Add other styles as needed */
+}
+.button{
+  color: gray;
+  display: absolute;
+  background-color: white;
+  margin-right: 40px; /* Increase this value to move the button more to the right */
 }
 
 .ul {
