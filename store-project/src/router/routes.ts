@@ -29,7 +29,7 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: ROUTE_PATHS.PRODUCTS,
     name: ROUTE_PATHS.PRODUCTS,
-    component: () => import("@/views/Products.vue"),
+    component: () => import("@/views/Product.vue"),
     meta: {
       breadcrumb: [{ label: "Products", route: "/products" }],
     },
