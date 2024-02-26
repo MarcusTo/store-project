@@ -1,27 +1,13 @@
 {
     "about":{
-        "header":"Ettevõttest"
+        "header":"Ettevõttest",
+        "aboutText1":"Tere tulemast , Eesti juhtivasse elektroonikatoodete ja teenuste ettevõttesse! Oleme uhked selle üle, et pakume laia valikut nutitelefone, arvuteid, kõrvaklappe ning nendega seotud teenuseid, mis vastavad teie digitaalsetele vajadustele. alustas oma teekonda 2004 aastal ja oleme pühendunud kvaliteetsete elektroonikaseadmete pakkumisele koos tipptasemelteenindusega.",
+        "aboutText12":"Meie eesmärk on tuua tipptehnoloogia otse teie käeulatusse, pakkudes samalajal personaalset klienditeenindust. Meie tootevalik hõlmab laias valikus nutitelefone erinevatest tippmarkidest, arvuteid igapäevaseks kasutamiseks ning kõrvaklappe, mis pakuvad suurepärast helikvaliteeti. Lisaks toodetele pakume ka mitmesuguseid teenuseid, sealhulgas seadmete remonti, tarkvara uuendamist. Oleme pühendunud teie rahulolule ning usume, et meie pühendumus kvaliteedile ja tipptasemel teenustele muudab meid teie usaldusväärseks partneriks digitaalses maailmas. Täname, et valisite meid! ja tehnilist tuge."
      },
-    "dataSaveError": "Ettevõtte andmeid ei leitud, palun logi uuesti sisse",
-    "date": "Kuupäev",
-    "decimal": "Kahe komakoha täpsusega arv",
-    "freeTextNoLimits": "Vaba tekst ilma tähemärgi piiranguta",
     
     "functional": {
       "about": "Info",
-      "backToMainPage": "Tagasi avalehele",
-      "cant_answer": "Ei saa vastata",
-      "completed": "Tehtud",
-      "false": "Väär",
-      "goToQuestionnaire": "Mine küsimustiku juurde",
-      "next": "Järgmine",
-      "pdf": "Lae alla pdf tulemustega",
-      "previous": "Eelmine",
-      "question": "Küsimus",
-      "question_answered": "Küsimus vastatud",
-      "submit": "Esita",
-      "tooltip": "Selgitus",
-      "true": "Õige"
+      "backToMainPage": "Tagasi avalehele"
     }
 }
   

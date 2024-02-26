@@ -2,9 +2,14 @@
   <div>
     <NavBarComp />
     <div class="header">
-      <h4 style="color: #ffff;">Enim ostetud</h4>
+      <h4 style="color: #ffff">Enim ostetud</h4>
       <div class="product-list">
-        <ProductItem v-for="product in products" :key="product.id" :product="product" @add-to-cart="addToCart" />
+        <ProductItem
+          v-for="product in products"
+          :key="product.id"
+          :product="product"
+          @add-to-cart="addToCart"
+        />
       </div>
     </div>
   </div>
@@ -24,28 +29,28 @@ export default {
       products: [
         {
           id: 1,
-          name: 'Phone Model 1',
-          image: 'src/assets/img/phonePic.png',
-          price: '990€',
+          name: "Phone Model 1",
+          image: "public/img/phonePic.png",
+          price: "900€",
         },
         {
           id: 2,
-          name: 'Phone Model 1',
-          image: 'src/assets/img/phonePic.png',
-          price: '799€',
+          name: "Phone Model 1",
+          image: "public/img/phonePic.png",
+          price: "799€",
         },
         {
           id: 3,
-          name: 'Phone Model 1',
-          image: 'src/assets/img/phonePic.png',
-          price: '999€',
+          name: "Phone Model 1",
+          image: "public/img/phonePic.png",
+          price: "999€",
         },
         {
           id: 4,
-          name: 'Phone Model 1',
-          image: 'src/assets/img/phonePic.png',
-          price: '899€',
-        }
+          name: "Phone Model 1",
+          image: "public/img/phonePic.png",
+          price: "899€",
+        },
       ],
     };
   },

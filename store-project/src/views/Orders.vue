@@ -1,11 +1,14 @@
 <template>
     <NavBarComp/>
+  <div class="">
+    <h1>Sinu tellimus</h1>    
     
-  <div>
-    <h1>About Page</h1>    
-    
-    <p>This is the about page content.</p>
-    <!-- You can add more content as needed -->
+    <p>
+
+
+    </p>
+
+
   </div>
 </template>
 

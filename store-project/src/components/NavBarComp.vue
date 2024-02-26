@@ -19,7 +19,7 @@
       </ul>
 
       <div>
-        <RouterLink to="/orders">
+        <RouterLink to="/cart" class="nav-bar__router-link">
           <button class="button">
             <i class="pi pi-shopping-cart"></i>
           </button>
@@ -38,7 +38,6 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /* Add other styles as needed */
 }
 .button{
   color: gray;

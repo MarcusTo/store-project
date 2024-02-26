@@ -5,23 +5,9 @@
     <h2>Ettevõttest</h2>
 
     <p>
-      Tere tulemast , Eesti juhtivasse elektroonikatoodete ja teenuste
-      ettevõttesse! Oleme uhked selle üle, et pakume laia valikut nutitelefone,
-      arvuteid, kõrvaklappe ning nendega seotud teenuseid, mis vastavad teie
-      digitaalsetele vajadustele. alustas oma teekonda 2004 aastal ja oleme
-      pühendunud kvaliteetsete elektroonikaseadmete pakkumisele koos tipptasemel
-      teenindusega.
+      
     </p>
     <p>
-      Meie eesmärk on tuua tipptehnoloogia otse teie käeulatusse, pakkudes samal
-      ajal personaalset klienditeenindust. Meie tootevalik hõlmab laias valikus
-      nutitelefone erinevatest tippmarkidest, arvuteid igapäevaseks kasutamiseks
-      ning kõrvaklappe, mis pakuvad suurepärast helikvaliteeti. Lisaks toodetele
-      pakume ka mitmesuguseid teenuseid, sealhulgas seadmete remonti, tarkvara
-      uuendamist. Oleme pühendunud teie rahulolule ning usume, et meie
-      pühendumus kvaliteedile ja tipptasemel teenustele muudab meid teie
-      usaldusväärseks partneriks digitaalses maailmas. Täname, et valisite
-      [Company Name]! ja tehnilist tuge.
     </p>
 
     <h2>Teenused</h2>
@@ -37,6 +23,9 @@
 
 <script setup lang="ts">
 import NavBarComp from "@/components/NavBarComp.vue";
+
+
+
 </script>
 
 <style>
