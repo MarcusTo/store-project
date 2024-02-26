@@ -9,7 +9,9 @@
         <li class="custom-list-item">
           <RouterLink to="/products">Tooted</RouterLink>
         </li>
-        
+        <li class="custom-list-item">
+          <RouterLink to="/services">Hooldus</RouterLink>
+        </li>
         <li class="custom-list-item">
           <RouterLink to="/about">Ettevõttest</RouterLink>
         </li>
@@ -40,10 +42,11 @@
   align-items: center;
 }
 .button{
-  color: gray;
+  color: black;
   display: absolute;
-  background-color: white;
-  margin-right: 40px; /* Increase this value to move the button more to the right */
+  background-color: #d3d3d3;
+  margin-right: 40px; 
+  
 }
 
 .ul {

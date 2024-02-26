@@ -2,22 +2,16 @@
   <NavBarComp />
 
   <div class="about">
-    <h2>{{ t('about.header') }}</h2>
-    <p>
+    <h2>{{ t("navbar.companyInfo") }}</h2>
 
-    </p>
-    <p>
+    <p>{{ t("about.aboutText") }}</p>
 
-    </p>
+    <h2>{{ t("about.contacts") }}</h2>
 
-    <h2>Teenused</h2>
-
-    <h2>Kontakt</h2>
-
-    <p style="font-weight: bold">POOD</p>
-    <p><i class="pi pi-home"></i> Aia 5, Tallinn, Estonia</p>
-    <p><i class="pi pi-phone"></i> +372 123 456 789</p>
-    <p><i class="pi pi-envelope"></i> info@pood.ee</p>
+    <p style="font-weight: bold">{{ t("about.name") }}</p>
+    <p><i class="pi pi-home"></i>{{ t("about.location") }}</p>
+    <p><i class="pi pi-phone"></i>{{ t("about.number") }}</p>
+    <p><i class="pi pi-envelope"></i>{{ t("about.mail") }}</p>
   </div>
 </template>
 
@@ -25,14 +19,14 @@
 import NavBarComp from "@/components/NavBarComp.vue";
 import { useI18n } from "vue-i18n";
 
-const {t} = useI18n();
+const { t } = useI18n();
 </script>
 
 <style>
 .about {
   display: block;
-  margin-top: 60px; 
-  margin-bottom: 60px; 
+  margin-top: 60px;
+  margin-bottom: 60px;
   text-align: center;
 }
 

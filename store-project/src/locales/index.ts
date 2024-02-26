@@ -7,4 +7,5 @@ export default createI18n({
     fallbackLocale: import.meta.env.VITE_FALLBACK_LOCALE,
     messages:{et,en},
     legacy: false,
+    globalInjection: true,
 })
