@@ -24,28 +24,31 @@
       </ul>
       <div class="navbar-user">
   <div>
-    <p>
-      {{ activeLang }}
-    </p>
     <ul style="list-style: none; margin: 0; padding: 0; display: flex;">
       <li
         :style="{
           'font-weight': activeLang === 'en' ? 'bold' : 'normal',
           color: '#4B5563',
-          marginRight: '10px'
+          marginRight: '10px',
+          display: 'flex',
+          alignItems: 'center'
         }"
         @click="setLocale('en')"
       >
         en
+        <img src="/public/img/flag-en.png" style="margin-left: 10px; width: 17px; height: 18px;">
       </li>
       <li
         :style="{
           'font-weight': activeLang === 'et' ? 'bold' : 'normal',
           color: '#4B5563',
+          display: 'flex',
+          alignItems: 'center'
         }"
         @click="setLocale('et')"
       >
         et
+        <img src="/public/img/est-circle.png" style="margin-left: 10px; width: 15px; height: 15px;">
       </li>
     </ul>
   </div>
@@ -69,6 +72,7 @@ import i18n from "@/config/18n.config";
 const activeLang = computed(() => {
   return i18n.global.locale.value;
 });
+
 </script>
 <style scoped lang="scss">
 .navbar {
@@ -84,7 +88,7 @@ const activeLang = computed(() => {
 }
 .navbar-user {
   position: relative;
-  margin-left: 50rem;
+  margin-left: 42rem;
 }
 .lang-dropdown {
   position: absolute;
