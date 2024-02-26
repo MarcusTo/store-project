@@ -1,26 +1,4 @@
 {
-    "about":{
-        "header":"Ettevõttest"
-     },
-    "dataSaveError": "Ettevõtte andmeid ei leitud, palun logi uuesti sisse",
-    "date": "Kuupäev",
-    "decimal": "Kahe komakoha täpsusega arv",
-    "freeTextNoLimits": "Vaba tekst ilma tähemärgi piiranguta",
-    "functional": {
-      "about": "Info",
-      "backToMainPage": "Tagasi avalehele",
-      "cant_answer": "Ei saa vastata",
-      "completed": "Tehtud",
-      "false": "Väär",
-      "goToQuestionnaire": "Mine küsimustiku juurde",
-      "next": "Järgmine",
-      "pdf": "Lae alla pdf tulemustega",
-      "previous": "Eelmine",
-      "question": "Küsimus",
-      "question_answered": "Küsimus vastatud",
-      "submit": "Esita",
-      "tooltip": "Selgitus",
-      "true": "Õige"
-    }
+ "header":"Ettevõttest"
 }
   
