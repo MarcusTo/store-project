@@ -1,7 +1,7 @@
 <template>
   <NavBarComp />
   <div class="about">
-    <h2>{{ t("navbar.companyInfo") }}</h2>
+    <h2>{{ t("navbar.company") }}</h2>
 
     <p>{{ t("about.aboutText") }}</p>
 
