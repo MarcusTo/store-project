@@ -36,7 +36,7 @@
         @click="setLocale('en')"
       >
         en
-        <img src="/public/img/flag-en.png" style="margin-left: 10px; width: 17px; height: 18px;">
+        <img src="/public/img/flag-en.png" style="margin-left: 10px; width: 17px; height: 19px;">
       </li>
       <li
         :style="{
