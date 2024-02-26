@@ -1,6 +1,7 @@
 <template>
+  <NavBarComp />
+
   <div>
-    <NavBarComp />
     <div class="header">
       <h4 style="color: #ffff">Enim ostetud</h4>
       <div class="product-list">
