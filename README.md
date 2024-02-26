@@ -14,11 +14,7 @@ Welcome to your one-stop destination for premium electronic products and service
 5. [Contributing](#contributing)
 6. [License](#license)
 
-## Overview
-
--  is an online store dedicated to providing a curated selection of high-quality electronic products. Our focus includes iPhones, Macs, Computers, AirPods, and associated services like repairs and maintenance.
-
-## Features
+## Overview and Features
 
 - **Extensive Product Catalog:**
   - Apple / Android devices
