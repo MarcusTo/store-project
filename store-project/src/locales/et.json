@@ -33,6 +33,12 @@
       "deliveryText":"Tasuta transport pakiautomaati kõikidele toodetele.",
       "selection":"Mitmekülgne valik -",
       "selectionText":"Laia valikuga seadmed erinevatele eelarvetele ja soovidele."
+    },
+    "warranty":{
+      "service":"Seadmete remont ja hooldus.",
+      "warrantyText":"Telefon samal päeval tagasi kätte.",
+      "warrantyText1":"Tasuta asenduseade ning tööjärgne aastane garantii.",
+      "more":"Uuri Lisa"
     }
   }
     
