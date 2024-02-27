@@ -22,7 +22,7 @@ import { useI18n } from "vue-i18n";
 const { t } = useI18n();
 </script>
 
-<style>
+<style scoped>
 .about {
   display: block;
   margin-top: 60px;

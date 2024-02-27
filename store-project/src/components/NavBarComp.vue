@@ -12,9 +12,9 @@
         <li class="custom-list-item">
           <RouterLink to="/services">{{ $t('navbar.service') }}</RouterLink>
         </li>
-        <li class="custom-list-item">
+        <!-- <li class="custom-list-item">
           <RouterLink to="/about">{{ $t('navbar.company') }}</RouterLink>
-        </li>
+        </li> -->
       </ul>
       <div class="navbar-user">
   <div>
@@ -30,7 +30,7 @@
         @click="setLocale('en')"
       >
         en
-        <img src="/public/img/flag-en.png" style="margin-left: 10px; width: 17px; height: 19px;">
+        <img src="/img/flag-en.png" style="margin-left: 10px; width: 17px; height: 19px;">
       </li>
       <li
         :style="{
@@ -42,7 +42,7 @@
         @click="setLocale('et')"
       >
         et
-        <img src="/public/img/est-circle.png" style="margin-left: 10px; width: 15px; height: 15px;">
+        <img src="/img/est-circle.png" style="margin-left: 10px; width: 15px; height: 15px;">
       </li>
     </ul>
   </div>
@@ -73,10 +73,9 @@ const activeLang = computed(() => {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: #d3d3d3;
 }
 .cart-button {
-  background-color: #d3d3d3;
+  background-color: #D9DDDC;
   margin-right: 50px;
 }
 .navbar-user {
