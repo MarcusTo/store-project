@@ -9,9 +9,9 @@
         <li class="custom-list-item">
           <RouterLink to="/products">{{ $t('navbar.products') }}</RouterLink>
         </li>
-        <!-- <li class="custom-list-item">
+        <li class="custom-list-item">
           <RouterLink to="/services">{{ $t('navbar.service') }}</RouterLink>
-        </li> -->
+        </li>
         <!-- <li class="custom-list-item">
           <RouterLink to="/about">{{ $t('navbar.company') }}</RouterLink>
         </li> -->
@@ -79,7 +79,7 @@ const activeLang = computed(() => {
   margin-right: 50px;
 }
 .navbar-user {
-  margin-left: 48rem;
+  margin-left: 54rem;
 }
 .ul {
   list-style: none;
