@@ -10,7 +10,7 @@
       <Card>
         <template #content>
           <a
-            href="/"
+            href="/products/iphone"
             style="display: flex; flex-direction: column; align-items: center"
           >
             <img
@@ -26,7 +26,7 @@
       <Card>
         <template #content>
           <a
-            href="/"
+            href="/products/headphones"
             style="display: flex; flex-direction: column; align-items: center"
           >
             <img
@@ -46,7 +46,7 @@
       <Card>
         <template #content>
           <a
-            href="/"
+            href="/products/mac"
             style="display: flex; flex-direction: column; align-items: center"
           >
             <img
