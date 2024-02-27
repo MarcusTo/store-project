@@ -1,17 +1,17 @@
 <template>
   <NavBarComp />
-
   <div class="about">
-    <h2>{{ t("navbar.companyInfo") }}</h2>
+    <h2>{{ t("navbar.company") }}</h2>
 
     <p>{{ t("about.aboutText") }}</p>
 
     <h2>{{ t("about.contacts") }}</h2>
-
-    <p style="font-weight: bold">{{ t("about.name") }}</p>
-    <p><i class="pi pi-home"></i>{{ t("about.location") }}</p>
-    <p><i class="pi pi-phone"></i>{{ t("about.number") }}</p>
-    <p><i class="pi pi-envelope"></i>{{ t("about.mail") }}</p>
+    <div class="info">
+      <p style="font-weight: bold">{{ t("about.name") }}</p>
+      <p><i class="pi pi-home"></i>{{ t("about.location") }}</p>
+      <p><i class="pi pi-phone"></i>{{ t("about.number") }}</p>
+      <p><i class="pi pi-envelope"></i>{{ t("about.mail") }}</p>
+    </div>
   </div>
 </template>
 
@@ -22,7 +22,7 @@ import { useI18n } from "vue-i18n";
 const { t } = useI18n();
 </script>
 
-<style>
+<style scoped>
 .about {
   display: block;
   margin-top: 60px;

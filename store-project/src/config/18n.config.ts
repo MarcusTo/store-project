@@ -1,12 +1,11 @@
 import { createI18n } from "vue-i18n";
 import en from "@/locales/en.json";
 import et from "@/locales/et.json";
-
 const i18n = createI18n({
     legacy: false,
     // default locale
-    locale: localStorage.getItem("locale") ?? "en",
-    fallbackLocale: "en",
+    locale: localStorage.getItem("locale") ?? "et",
+    fallbackLocale: "et",
     messages: {
       "en": en,
       "et": et
@@ -17,10 +16,11 @@ const i18n = createI18n({
 
   export const supportedLocales = [
     { code: "en", name: "English" },
-    { code: "ee", name: "Eesti" },
+    { code: "et", name: "Eesti" },
   ];
   
   export function setLocale(locale: any) {
     localStorage.setItem("locale", locale);
-    i18n.global.locale.value = (localStorage.getItem("locale") || "en");
+    //@ts-ignore
+    i18n.global.locale.value = (localStorage.getItem("locale") || "et");
   }
