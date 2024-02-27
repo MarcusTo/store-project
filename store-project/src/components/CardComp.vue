@@ -1,45 +1,47 @@
 <template>
   <h2 style="display: flex; justify-content: center; align-items: center">
-    Miks osta seade meie poest?
+    {{ t("card.whyUs") }}
   </h2>
-  <div class="card-container">
+  <div
+    class="card-container"
+    style="box-shadow: 0px 4px 8px rgba(255, 255, 255, 0.573)"
+  >
     <div class="card">
       <Card>
-        <template #title>Kvaliteetne valik:</template>
+        <template #title> {{ t("card.quality") }}</template>
         <template #content>
           <p class="m-0" style="max-width: 200px">
-            Suurim valik uusi ja kasutatud tooteid garantiiga.
+            {{ t("card.qualityText") }}
           </p>
         </template>
       </Card>
     </div>
     <div class="card">
       <Card>
-        <template #title>Ekspertteenindus</template>
+        <template #title>{{ t("card.service") }}</template>
         <template #content>
           <p class="m-0" style="max-width: 200px">
-            Enamus tooteid kohe saadaval - külastage esindust või tellige
-            e-poest.
+            {{ t("card.serviceText") }}
           </p>
         </template>
       </Card>
     </div>
     <div class="card">
       <Card>
-        <template #title>Kiire tarne:</template>
+        <template #title>{{ t("card.delivery") }}</template>
         <template #content>
           <p class="m-0" style="max-width: 200px">
-            Tasuta transport pakiautomaati kõikidele toodetele.
+            {{ t("card.deliveryText") }}
           </p>
         </template>
       </Card>
     </div>
     <div class="card">
       <Card>
-        <template #title>Mitmekülgne valik: </template>
+        <template #title>{{ t("card.selection") }} </template>
         <template #content>
           <p class="m-0" style="max-width: 200px">
-            Laia valikuga seadmed erinevatele eelarvetele ja soovidele.
+            {{ t("card.selectionText") }}
           </p>
         </template>
       </Card>
@@ -48,11 +50,14 @@
 </template>
 <script setup lang="ts">
 import Card from "primevue/card";
+import { useI18n } from "vue-i18n";
+
+const { t } = useI18n();
 </script>
 <style scoped>
-.card-container{
-    display: flex;
-    justify-content: center;
+.card-container {
+  display: flex;
+  justify-content: center;
 }
 .card {
   display: flex;

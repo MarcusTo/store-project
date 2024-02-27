@@ -1,22 +1,25 @@
 <template>
   <NavBarComp />
+  <ProductCardComp>
+  </ProductCardComp>
   <CardComp> 
   </CardComp>
+
+ 
 </template>
 
 <script setup lang="ts">
 import NavBarComp from "@/components/NavBarComp.vue";
 import CardComp from "@/components/CardComp.vue";
+import ServiceCardComp from "@/components/CardComp.vue";
+import ProductCardComp from "@/components/ProductCardComp.vue";
 </script>
 
 <style scoped>
-.header {
-  text-align: center;
-  color: #ffff;
-}
-.product-list {
+.container {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
+  flex-direction: column;
+  min-height: 100vh;
+  justify-content: space-between;
 }
 </style>

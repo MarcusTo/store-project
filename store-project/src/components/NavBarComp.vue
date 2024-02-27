@@ -9,9 +9,9 @@
         <li class="custom-list-item">
           <RouterLink to="/products">{{ $t('navbar.products') }}</RouterLink>
         </li>
-        <li class="custom-list-item">
+        <!-- <li class="custom-list-item">
           <RouterLink to="/services">{{ $t('navbar.service') }}</RouterLink>
-        </li>
+        </li> -->
         <!-- <li class="custom-list-item">
           <RouterLink to="/about">{{ $t('navbar.company') }}</RouterLink>
         </li> -->
