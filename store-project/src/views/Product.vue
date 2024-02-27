@@ -1,18 +1,12 @@
 <template>
-    <NavBarComp/>
-  <div>
-    <h1>About Page</h1>    
+  <NavBarComp />
     
-    <p>This is the about page content.</p>
-  </div>
+  <FooterComp />
 </template>
 
 <script setup lang="ts">
+import FooterComp from "@/components/FooterComp.vue";
 import NavBarComp from "@/components/NavBarComp.vue";
-
 </script>
 
-<style scoped>
-
-
-</style>
+<style scoped></style>
