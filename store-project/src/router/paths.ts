@@ -3,10 +3,10 @@ export enum ROUTE_PATHS {
   
   PRODUCTS = "/products",
   PRODUCT_DETAILS = "/products/:id",
-
+  
+  SERVICES = "/services",
   CART = "/cart",
   CHECKOUT = "/checkout",
-  
   LOGIN = "/login",
   REGISTER = "/register",
     

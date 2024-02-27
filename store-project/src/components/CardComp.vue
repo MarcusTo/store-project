@@ -4,7 +4,7 @@
   </h2>
   <div
     class="card-container"
-    style="box-shadow: 0px 4px 8px rgba(255, 255, 255, 0.573)"
+    style="box-shadow: 0px 4px 8px rgba(208, 205, 205, 0.573)"
   >
     <div class="card">
       <Card>
