@@ -20,14 +20,6 @@ const routes: Array<RouteRecordRaw> = [
     },
   },
   {
-    path: ROUTE_PATHS.PROFILE,
-    name: ROUTE_PATHS.PROFILE,
-    component: () => import("@/views/Profile.vue"),
-    meta: {
-      breadcrumb: [{ label: "Profile", route: "/profile" }],
-    },
-  },
-  {
     path: ROUTE_PATHS.PRODUCTS,
     name: ROUTE_PATHS.PRODUCTS,
     component: () => import("@/views/Product.vue"),
