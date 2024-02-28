@@ -29,7 +29,7 @@
               en
               <img
                 src="/img/flag-en.png"
-                style="margin-left: 10px; width: 17px; height: 19px"
+                style="padding-left: 10px; width: 17px; height: 19px"
               />
             </li>
             <li
@@ -44,7 +44,7 @@
               et
               <img
                 src="/img/est-circle.png"
-                style="margin-left: 10px; width: 15px; height: 15px"
+                style="padding-left: 10px; width: 15px; height: 15px"
               />
             </li>
           </ul>
@@ -79,7 +79,7 @@ const activeLang = computed(() => {
   margin-right: 50px;
 }
 .navbar-user {
-  margin-left: 54rem;
+  padding-left: 54rem;
 }
 .ul {
   list-style: none;

@@ -36,6 +36,11 @@
     "warrantyText":"Phone returned on the same day.",
     "warrantyText1":"Free replacement device and one-year post-service warranty.",
     "more":"Find more"
-  }
+  },
+  "service":{
+    "header":"Hooldus",
+    "header1":"Sinu seade ei tööta korrektselt?"
+  },
+  "copyright":"TM&JR"
 }
   
