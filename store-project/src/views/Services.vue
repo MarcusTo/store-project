@@ -13,7 +13,7 @@
           <p class="accordion-header">{{ t("repairs.prices") }}</p>
         </template>
         <div>
-          <p class="sub-header">{{ t("repairs.maintenance") }}</p>
+          <p class="sub-header">{{ t("repairs.repairs") }}</p>
           <ul class="price-list">
             <li>{{ t("repairs.diagnostics") }}</li>
             <li>{{ t("repairs.act") }}</li>
