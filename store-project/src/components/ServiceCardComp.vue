@@ -3,7 +3,7 @@
       <h2 style="display: flex; justify-content: center; align-items: center">
         {{ t("warranty.service") }}
       </h2>
-      <router-link to="/service">
+      <router-link to="/services">
         <h4 style="display: flex; justify-content: center; align-items: center">
             {{ t("warranty.more") }}
         </h4>

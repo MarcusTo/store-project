@@ -10,7 +10,7 @@
           <RouterLink to="/products">{{ $t("navbar.products") }}</RouterLink>
         </li>
         <li class="custom-list-item">
-          <RouterLink to="/services">{{ $t("navbar.service") }}</RouterLink>
+          <RouterLink to="/services">{{ $t("navbar.repairs") }}</RouterLink>
         </li>
       </ul>
       <div class="navbar-user">
