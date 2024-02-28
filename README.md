@@ -17,10 +17,9 @@ Welcome to your one-stop destination for premium electronic products and service
 ## Overview and Features
 
 - **Extensive Product Catalog:**
-  - Apple / Android devices
-  - Product keys 
-  - Laptops, Desktops
-  - Wireless earbuds - Android and Apple
+  - Iphones 
+  - Airpods 
+  - Mac laptops and iMacs
   - Accessories
 
 - **Service Offerings:**
