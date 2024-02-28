@@ -5,7 +5,7 @@ export enum ROUTE_PATHS {
   PRODUCT_DETAILS = "/products/:id",
   
   SERVICES = "/services",
-  CART = "/cart",
+  CART = "/cartView",
   CHECKOUT = "/checkout",
   LOGIN = "/login",
   REGISTER = "/register",
