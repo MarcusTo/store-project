@@ -10,7 +10,7 @@
       <Card>
         <template #content>
           <a
-            href="/products/iphone"
+            href="/products"
             style="display: flex; flex-direction: column; align-items: center"
           >
             <img

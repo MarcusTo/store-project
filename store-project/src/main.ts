@@ -4,6 +4,8 @@ import App from './App.vue'
 import router from '@/router';
 import 'primeicons/primeicons.css'
 import i18n from './config/18n.config';
+import { createPinia } from 'pinia'
+
 
 
 const app = createApp(App);
@@ -11,3 +13,4 @@ const app = createApp(App);
 app.use(router);
 app.use(i18n)
 app.mount('#app');
+app.use(createPinia())
