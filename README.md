@@ -51,7 +51,7 @@ Make sure you have the following installed:
 1. Clone the repository:
 
     ```bash
-    git clone https://github.com/your-username/-.git
+    git clone https://github.com/MarcusTo/store-project.git
     ```
 
 2. Navigate to the project directory:
@@ -71,10 +71,14 @@ Make sure you have the following installed:
 1. Start the development server:
 
     ```bash
-    npm start
+    npm run dev
     ```
 
-2. Open your browser and visit `http://localhost:8080` to view the website.
+2. Open your browser and visit `http://localhost:8080/5173` to view the website.
+## ERD Diagram
+
+[ERD](https://lucid.app/lucidchart/94fc75a8-376e-4b6c-a7e4-be09b4ad5262/edit?beaconFlowId=C1E2FAEE5B2DC0FF&page=0_0&invitationId=inv_906ba416-a3d9-43cf-a15e-069f24c32c5a#)
+
 
 ## License
 
