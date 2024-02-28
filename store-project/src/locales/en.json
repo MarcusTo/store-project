@@ -2,7 +2,7 @@
   "navbar":{
     "home":"Home",
     "products":"Products",
-    "service":"Service",
+    "repairs":"Repairs",
     "company":"Company"
   },
   "footer":{
@@ -36,6 +36,37 @@
     "warrantyText":"Phone returned on the same day.",
     "warrantyText1":"Free replacement device and one-year post-service warranty.",
     "more":"Find more"
-  }
+  },
+  "repairs": {
+    "repairs": "Repairs",
+    "functioning": "Device not functioning properly?",
+    "prices":"Prices",
+    "maintenance":"Maintance",
+    "diagnostics": "Diagnostics / Quotation - €29.00",
+    "act": "Repairing Act - €25.00",
+    "actSwed": "Repairing Act Swedbank - €13.00",
+    "software": "Software Installation - €39.00",
+    "data": "Data Recovery - starting at €89.00",
+    "dataTransfer": "Data Transfer Between Devices - €39.00",
+    "rentMac": "Laptop Replacement Rent - €40.00",
+    "rentIphone": "Phone Replacement Rent - €20.00",
+    "macService": "Regular MacBook Service - €59.00",
+    "imacService":"Regular iMac Service - €79.00",
+    "repairParts":"Repair/Spare Parts",
+    "iphoneBatterySE": "iPhone battery replacement (SE 2nd gen and SE 3rd gen) - €109.00",
+    "iphoneBatteryX": "iPhone battery replacement (X and newer) - €129.00",
+    "iphoneScreenSE": "iPhone SE (SE 2nd gen and SE 3rd gen) screen replacement - €325.00",
+    "iphoneScreenXR": "iPhone XR/11 screen replacement - €353.00",
+    "iphoneScreenXSeries": "iPhone X/Xs/11 Pro/12/12 Pro/13/13 Pro/14/15 screen replacement - €438.00",
+    "iphoneScreenMini": "iPhone 12 mini/13 mini screen replacement - €394.00",
+    "iphoneScreenMax": "iPhone Xs Max/11-12-13 Pro Max/14 Pro/14 Plus/15 Pro/15 Plus screen replacement - €514.00",
+    "iphoneScreenMaxPro": "iPhone 14/15 Pro Max screen replacement - €614.00",
+    "lostAirPodsProCase": "Lost AirPods Pro case - €131.00",
+    "lostAirPodsProEarbuds": "Lost AirPods Pro earbuds - €121.00",
+    "lostWirelessAirPodsCase": "Lost Wireless AirPods case - €101.00",
+    "lostAirPodsCase": "Lost AirPods case - €101.00",
+    "lostAirPodsEarbuds": "Lost AirPods earbuds - €101.00"
+  },
+  "copyright":"TM&JR"
 }
   
