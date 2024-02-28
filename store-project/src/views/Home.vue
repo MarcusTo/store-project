@@ -1,7 +1,7 @@
 <template>
   <NavBarComp />
   <ProductCardComp/>
-  <CardComp/> 
+  <CardComp/>
   <ServiceCardComp/>
   <FooterComp/>
 </template>
