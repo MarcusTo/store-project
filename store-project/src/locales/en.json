@@ -10,14 +10,12 @@
     "contacts":"Contact",
     "name":"Pood Pood",
     "location":"Aia 5, 10111 Tallinn",
-    "number":"+372 123 456 789",
-    "mail":"info@pood.ee",
-    "aboutText":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. In eget eleifend sapien. Morbi interdum nulla nulla, ac ullamcorper ipsum lacinia at. Nam ut neque lobortis, tempus quam non, pharetra lorem. Etiam in lorem libero. Ut bibendum eros eu arcu fringilla vehicula. Duis porttitor tellus vitae urna maximus euismod. Vivamus in tortor nisl."
+    "info":"info@pood.ee +372 123 456 789"
   },
   "home":{
     "homeHeader":"Wide selection of favorite products.",
     "iphone":"iPhone",
-    "headphones":"Headphones",
+    "headphones":"Airpods",
     "mac":"Apple Mac"
   },
   "card":{
@@ -35,7 +33,7 @@
     "service":"Repair and maintenance.",
     "warrantyText":"Phone returned on the same day.",
     "warrantyText1":"Free replacement device and one-year post-service warranty.",
-    "more":"Find more"
+    "more":"Learn more"
   },
   "repairs": {
     "repairs": "Repairs",

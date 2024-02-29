@@ -1,9 +1,9 @@
 <template>
   <div class="container">
     <div class="content">
-        <p style="font-weight: bold">{{t('footer.name') }}</p>
-    <p><i class="pi pi-home"></i>{{ t('footer.location') }}</p>
-    <p><i class="pi pi-phone"></i> {{ t('footer.number') }}</p>
+      <p style="font-weight: bold">{{ t("footer.name") }}</p>
+      <p>{{ t("footer.location") }}</p>
+      <p>{{ t("footer.info") }}</p>
       <p class="copyright">
         {{ new Date().getFullYear() }} -
         <strong> {{ t("copyright") }}</strong>

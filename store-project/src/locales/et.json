@@ -10,13 +10,12 @@
     "contacts": "Contact",
     "name": "Pood Pood",
     "location": "Aia 5, 10111 Tallinn",
-    "number": "+372 123 456 789",
-    "mail": "info@pood.ee"
+    "info":"info@pood.ee +372 123 456 789"
   },
   "home": {
     "homeHeader": "Laias valikus lemmiktooteid.",
     "iphone": "iPhone",
-    "headphones": "Kõrvaklapid",
+    "headphones": "Airpods",
     "mac": "Apple Mac"
   },
   "card": {
