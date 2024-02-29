@@ -3,7 +3,10 @@
     <div class="content">
       <p style="font-weight: bold">{{ t("footer.name") }}</p>
       <p>{{ t("footer.location") }}</p>
-      <p>{{ t("footer.info") }}</p>
+      <div class="info">
+        <p>{{ t("footer.info2") }}</p>
+        <p>{{ t("footer.info") }}</p>
+      </div>
       <p class="copyright">
         {{ new Date().getFullYear() }} -
         <strong> {{ t("copyright") }}</strong>
@@ -21,5 +24,17 @@ const { t } = useI18n();
 <style scoped>
 .content {
   text-align: center;
+  align-items: center;
+  justify-content: center;
+  
+}
+p {
+  margin: 2px;
+  padding: 2px;
+}
+.info{
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 </style>

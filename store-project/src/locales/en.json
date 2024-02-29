@@ -10,7 +10,8 @@
     "contacts":"Contact",
     "name":"Pood Pood",
     "location":"Aia 5, 10111 Tallinn",
-    "info":"info@pood.ee +372 123 456 789"
+    "info":"+372 123 456 789",
+    "info2":"info@pood.ee"
   },
   "home":{
     "homeHeader":"Wide selection of favorite products.",
@@ -64,6 +65,9 @@
     "lostWirelessAirPodsCase": "Lost Wireless AirPods case - €101.00",
     "lostAirPodsCase": "Lost AirPods case - €101.00",
     "lostAirPodsEarbuds": "Lost AirPods earbuds - €101.00"
+  },
+  "products":{
+    "model":"Model"
   },
   "copyright":"TM&JR"
 }
