@@ -33,6 +33,7 @@ const handleInput = () => {};
   align-items: center;
   justify-content: center;
   display: flex;
+  margin-bottom: 40px;
 }
 
 .text {
@@ -40,7 +41,7 @@ const handleInput = () => {};
   height: 40px; 
   width: 50%;
   font-size: 16px; 
-
+  border-radius: 10px; 
 }
 
 .pi-search {
