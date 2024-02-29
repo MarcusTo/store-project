@@ -3,6 +3,8 @@
   <SearchComp/>
   <hr>
   <FooterComp />
+
+  
 </template>
 
 <script setup lang="ts">
