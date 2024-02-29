@@ -25,10 +25,10 @@
               }"
               @click="setLocale('et')"
             >
-              et
+              ee
               <img
-                src="/img/est-circle.png"
-                style="padding-right: 10px; padding-left: 6px; width: 14px; height: 14px"
+                src="/img/flags/estonia.png"
+                style="padding-right: 10px; padding-left: 6px; width: 15px; height: 15px"
               />
             </li>
             <li
@@ -43,8 +43,8 @@
             >
               en
               <img
-                src="/img/flag-en.png"
-                style="padding-left: 10px; width: 17px; height: 19px"
+                src="/img/flags/united-kingdom-rounded.png"
+                style="padding-left: 10px; width: 15px; height: 15px"
               />
             </li>
           </ul>
