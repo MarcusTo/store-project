@@ -3,13 +3,8 @@
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-
-;
-  background-color: #D9DDDC;
-  color: black;
-  /* background-color: #0F0F0F; */
-  /* color: #F0FFF0; */
-
+  background-color: #FAFAFA;
+  color: #333; 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -18,11 +13,11 @@
 
 a {
   font-weight: 500;
-  color: black;
+  color: #333; 
   text-decoration: inherit;
 }
 a:hover {
-  color: #ffff;
+  color: #0051A8; /* Darker blue */
 }
 
 body {
@@ -44,7 +39,7 @@ button {
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
+  color: #fff;
   cursor: pointer;
   transition: border-color 0.25s;
 }
@@ -55,6 +50,7 @@ button:focus-visible {
 
 .card {
   padding: 2em;
+  color: #333; 
 }
 
 #app {

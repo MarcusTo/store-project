@@ -3,10 +3,10 @@
       <h2 style="display: flex; justify-content: center; align-items: center">
         {{ t("warranty.service") }}
       </h2>
-      <router-link to="/services">
-        <h4 style="display: flex; justify-content: center; align-items: center">
+      <router-link to="/services" style="display: flex; justify-content:center; align-items: center;">
+        <p label="link">
             {{ t("warranty.more") }}
-        </h4>
+        </p>
       </router-link>
       <div class="card-container">
         <div class="card">
@@ -37,6 +37,7 @@
 <script setup lang="ts">
 import Card from "primevue/card";
 import { useI18n } from "vue-i18n";
+import Button from 'primevue/button';
 
 const { t } = useI18n();
 </script>

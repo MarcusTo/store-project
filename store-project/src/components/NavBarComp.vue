@@ -16,23 +16,7 @@
       <div class="navbar-user">
         <div>
           <ul style="list-style: none; margin: 0; padding: 0; display: flex">
-            <li
-              :style="{
-                'font-weight': activeLang === 'en' ? 'bold' : 'normal',
-                color: 'black',
-                marginRight: '10px',
-                display: 'flex',
-                alignItems: 'center',
-              }"
-              @click="setLocale('en')"
-            >
-              en
-              <img
-                src="/img/flag-en.png"
-                style="padding-left: 10px; width: 17px; height: 19px"
-              />
-            </li>
-            <li
+            <div
               :style="{
                 'font-weight': activeLang === 'et' ? 'bold' : 'normal',
                 color: '#4B5563',
@@ -41,19 +25,48 @@
               }"
               @click="setLocale('et')"
             >
-              et
-              <img
-                src="/img/est-circle.png"
-                style="padding-left: 10px; width: 15px; height: 15px"
-              />
-            </li>
+              <li>
+                <img
+                  src="/img/flags/estonia.png"
+                  style="
+                    padding-right: 18px;
+                    padding-left: 6px;
+                    width: 15px;
+                    height: 15px;
+                  "
+                />
+              </li>
+            </div>
+            <div
+              :style="{
+                'font-weight': activeLang === 'en' ? 'bold' : 'normal',
+                color: '#4B5563',
+                display: 'flex',
+                alignItems: 'center',
+              }"
+              @click="setLocale('en')"
+            >
+              <li>
+                
+                <img
+                  src="/img/flags/united-kingdom-rounded.png"
+                  style="
+                    padding-right: 10px;
+                    padding-left: 6px;
+                    width: 15px;
+                    height: 15px;
+                  "
+                />
+              </li>
+            </div>
           </ul>
         </div>
       </div>
       <div>
-          <button class="cart-button">
-            <RouterLink to="/cartView" class="nav-bar__router-link"> 
-              <i class="pi pi-shopping-cart"></i></RouterLink>
+        <button class="cart-button">
+          <RouterLink to="/cartView" class="nav-bar__router-link">
+            <i class="pi pi-shopping-bag"></i
+          ></RouterLink>
         </button>
       </div>
     </div>
@@ -75,7 +88,7 @@ const activeLang = computed(() => {
   align-items: center;
 }
 .cart-button {
-  background-color: #d9dddc;
+  background-color: #fafafa;
   margin-right: 50px;
 }
 .navbar-user {

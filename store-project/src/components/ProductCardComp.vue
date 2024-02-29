@@ -14,7 +14,7 @@
             style="display: flex; flex-direction: column; align-items: center"
           >
             <img
-              src="/img/iphone-titanium.png"
+              src="/img/products/iphone-titanium.png"
               style="width: 200px; height: 200px"
             />
             <p class="m-0" style="max-width: 200px">{{ t("home.iphone") }}</p>
@@ -26,11 +26,11 @@
       <Card>
         <template #content>
           <a
-            href="/products/headphones"
+            href="/products"
             style="display: flex; flex-direction: column; align-items: center"
           >
             <img
-              src="/img/airpods.png"
+              src="/img/products/airpods.png"
               alt="Telefonid"
               style="width: 200px; height: 200px"
             />
@@ -46,11 +46,11 @@
       <Card>
         <template #content>
           <a
-            href="/products/mac"
+            href="/products"
             style="display: flex; flex-direction: column; align-items: center"
           >
             <img
-              src="/img/mac-black.png"
+              src="/img/products/mac-black.png"
               alt="Telefonid"
               style="width: 200px; height: 200px"
             />
