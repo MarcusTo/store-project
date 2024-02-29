@@ -1,8 +1,11 @@
 <template>
   <NavBarComp />
   <ProductCardComp/>
+  <hr/>
   <CardComp/>
+  <hr/>
   <ServiceCardComp/>
+  <hr/>
   <FooterComp/>
 </template>
 
@@ -15,4 +18,8 @@ import FooterComp from "@/components/FooterComp.vue"
 </script>
 
 <style scoped>
+hr {
+  border: none;
+  border-top: 1px solid #ccc; 
+}
 </style>
