@@ -1,0 +1,89 @@
+{
+  "navbar":{
+    "home":"Home",
+    "iphone": "iPhone",
+    "airpods": "Airpods",
+    "mac": "Mac",
+    "repairs":"Repairs",
+    "company":"Company"
+  },
+  "footer":{
+    "company":"About us",
+    "contacts":"Contact",
+    "name":"Pood Pood",
+    "location":"Aia 5, 10111 Tallinn",
+    "info":"+372 123 456 789"
+  },
+  "home":{
+    "homeHeader":"Wide selection of favorite products.",
+    "iphone":"iPhone",
+    "headphones":"Airpods",
+    "mac":"Apple Mac"
+  },
+  "card":{
+    "whyUs":"Why us?",
+    "quality":"Quality selection",
+    "qualityText":"Largest selection of new and used products with warranty.",
+    "service":"Expert service",
+    "serviceText":"Most products available immediately - visit our store or order online.",
+    "delivery":"Fast delivery",
+    "deliveryText":"Free shipping to parcel lockers on all products.",
+    "selection":"Versatile selection",
+    "selectionText":"A wide range of devices for various budgets and preferences."
+  },
+  "warranty":{
+    "service":"Repair and maintenance.",
+    "warrantyText":"Phone returned on the same day.",
+    "warrantyText1":"Free replacement device and one-year post-service warranty.",
+    "more":"Learn more"
+  },
+  "repairs": {
+    "repairs": "Repairs",
+    "functioning": "Device not functioning properly?",
+    "prices":"Prices",
+    "maintenance":"Maintance",
+    "diagnostics": "Diagnostics / Quotation - €29.00",
+    "act": "Repairing Act - €25.00",
+    "actSwed": "Repairing Act Swedbank - €13.00",
+    "software": "Software Installation - €39.00",
+    "data": "Data Recovery - starting at €89.00",
+    "dataTransfer": "Data Transfer Between Devices - €39.00",
+    "rentMac": "Laptop Replacement Rent - €40.00",
+    "rentIphone": "Phone Replacement Rent - €20.00",
+    "macService": "Regular MacBook Service - €59.00",
+    "imacService":"Regular iMac Service - €79.00",
+    "repairParts":"Repair/Spare Parts",
+    "iphoneBatterySE": "iPhone battery replacement (SE 2nd gen and SE 3rd gen) - €109.00",
+    "iphoneBatteryX": "iPhone battery replacement (X and newer) - €129.00",
+    "iphoneScreenSE": "iPhone SE (SE 2nd gen and SE 3rd gen) screen replacement - €325.00",
+    "iphoneScreenXR": "iPhone XR/11 screen replacement - €353.00",
+    "iphoneScreenXSeries": "iPhone X/Xs/11 Pro/12/12 Pro/13/13 Pro/14/15 screen replacement - €438.00",
+    "iphoneScreenMini": "iPhone 12 mini/13 mini screen replacement - €394.00",
+    "iphoneScreenMax": "iPhone Xs Max/11-12-13 Pro Max/14 Pro/14 Plus/15 Pro/15 Plus screen replacement - €514.00",
+    "iphoneScreenMaxPro": "iPhone 14/15 Pro Max screen replacement - €614.00",
+    "lostAirPodsProCase": "Lost AirPods Pro case - €131.00",
+    "lostAirPodsProEarbuds": "Lost AirPods Pro earbuds - €121.00",
+    "lostWirelessAirPodsCase": "Lost Wireless AirPods case - €101.00",
+    "lostAirPodsCase": "Lost AirPods case - €101.00",
+    "lostAirPodsEarbuds": "Lost AirPods earbuds - €101.00"
+  },
+  "products":{
+    "model":"Model",
+    "iphone": "iPhone",
+    "airpods": "Airpods",
+    "mac": "Mac",
+    "details":"View Details",
+    "buy":"from",
+    "new":"New",
+    "used":"Used"
+  },
+  "cart":{
+    "title":"Shopping Cart",
+    "addToCart":"Add to cart",
+    "iphone": "iPhone",
+    "airpods": "Airpods",
+    "mac": "Mac"
+  },
+  "copyright":"TM&JR"
+}
+  

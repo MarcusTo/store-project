@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="143px" height="143px" viewBox="0 0 143 143" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 58 (84663) - https://sketch.com -->
+    <title>Artboard</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="53" y="44" width="34" height="16"></rect>
+    </defs>
+    <g id="Artboard" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <path d="M2,71.5 C2,33.1156834 33.1156834,2 71.5,2 C109.884317,2 141,33.1156834 141,71.5 C141,109.884317 109.884317,141 71.5,141 C33.1156834,141 2,109.884317 2,71.5 Z" id="Ellipse" stroke="#1E1E1E" stroke-width="3"></path>
+        <rect id="Rectangle" stroke="#1E1E1E" stroke-width="3" x="55" y="60" width="34" height="30" rx="4"></rect>
+        <mask id="mask-2" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+        <g id="Rectangle"></g>
+        <circle id="Mask" stroke="#1E1E1E" stroke-width="3" mask="url(#mask-2)" cx="72" cy="61" r="11"></circle>
+    </g>
+</svg>
