@@ -9,17 +9,27 @@
           <div style="display: flex; gap: 10px; align-items: center">
             <Button
               class="membutton"
+              style="
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+              "
               :class="{ highlighted: selectedMemory === '256 GB' }"
               @click="selectedMemory = '256 GB'"
             >
-              256 GB
+              {{ product.memory }} GB
             </Button>
             <Button
               class="membutton"
+              style="
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+              "
               :class="{ highlighted: selectedMemory === '512 GB' }"
               @click="selectedMemory = '512 GB'"
             >
-              512 GB
+              {{ product.memory }} GB
             </Button>
           </div>
           <div>
@@ -37,7 +47,7 @@
               "
             >
               <RadioButton
-                v-model="selecteColor"
+                v-model="selectedColor"
                 :inputId="color.key"
                 name="dynamic"
                 :value="color.name"
@@ -71,7 +81,7 @@ import { useI18n } from "vue-i18n";
 const { t } = useI18n();
 const route = useRoute();
 const product = ref(null);
-const selecteColor = ref("Production");
+const selectedColor = ref("Production");
 
 const colors = ref([
   { name: "Black", key: "B" },
@@ -116,7 +126,7 @@ onMounted(() => {
 }
 .membutton {
   margin-right: 2px;
-  height: 36px;
+  height: 40px;
   background-color: #0066cc;
   border: 2px solid #0066cc;
   color: #ffffff;

@@ -23,10 +23,10 @@
           margin-bottom: 5px;
         "
       />
-      <p style="font-size: 20px; font-weight: 500;">{{ t("products.new") }} {{ product.name }}</p>
+      <p style="font-size: 20px; font-weight: 500;">{{ t("products.used") }} {{ product.name }}</p>
       <router-link
         class="button"
-        :to="`/iphone/new/${product.name}/${product.id}`"
+        :to="`/iphone/used/${product.name}/${product.id}`"
       >
         <p>{{ t("products.buy") }} €{{ product.price }} ></p>
       </router-link>
@@ -42,11 +42,10 @@
           margin-bottom: 5px;
         "
       />
-      <p style="font-size: 20px; font-weight: 500;">{{ t("products.used") }} {{ product.name }}</p>
+      <p style="font-size: 20px; font-weight: 500;">{{ t("products.new") }} {{ product.name }}</p>
       <router-link
         class="button"
-        :to="`/iphone/used/${product.id}/${product.id}`"
-      >
+        :to="`/iphone/new/${product.name}/${product.id}`"      >
         <p>{{ t("products.buy") }} €{{ product.price }} ></p>
       </router-link>
     </div>
