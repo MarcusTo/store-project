@@ -21,7 +21,6 @@
       <img src="/img/cart_placeholder.svg" />
     </div>
   </div>
-  <hr>
   <FooterComp />
 </template>
 
@@ -29,6 +28,7 @@
 import NavBarComp from "@/components/NavBarComp.vue";
 import FooterComp from "@/components/FooterComp.vue";
 import { useI18n } from "vue-i18n";
+import { sampleProducts } from "@/data.ts";
 
 const { t } = useI18n();
 

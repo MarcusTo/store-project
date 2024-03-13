@@ -4,7 +4,7 @@ export interface Product {
   id: number
   name: string
   price: number
-  memory: number
+  memory: number[]
   color:string
   description: string
   category: string

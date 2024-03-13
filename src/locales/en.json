@@ -84,6 +84,12 @@
     "airpods": "Airpods",
     "mac": "Mac"
   },
+  "memoryOptions":{
+    "128":"128 GB",
+    "256":"256 GB",
+    "512":"512 GB",
+    "1":"1 TB"
+  },
   "copyright":"TM&JR"
 }
   

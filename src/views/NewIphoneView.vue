@@ -1,5 +1,15 @@
 <template>
   <NavBarComp />
+  <h2
+    style="
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 32px;
+    "
+  >
+    {{ product?.name }}
+  </h2>
   <div class="product-grid">
     <div v-if="product" class="product-card">
       <img :src="product.image" alt="Product Image" class="product-image" />
@@ -8,28 +18,21 @@
           <p style="font-size: 13px; font-weight: 500">VALI MÄLUMAHT</p>
           <div style="display: flex; gap: 10px; align-items: center">
             <Button
+              v-for="(option, index) in product.memory"
+              :key="index"
               class="membutton"
               style="
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
+                white-space: nowrap;
               "
-              :class="{ highlighted: selectedMemory === '256 GB' }"
-              @click="selectedMemory = '256 GB'"
+              :class="{
+                transparent: selectedMemory !== option,
+              }"
+              @click="selectedMemory = option"
             >
-              {{ product.memory }} GB
-            </Button>
-            <Button
-              class="membutton"
-              style="
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-              "
-              :class="{ highlighted: selectedMemory === '512 GB' }"
-              @click="selectedMemory = '512 GB'"
-            >
-              {{ product.memory }} GB
+              {{ option === 1 ? option + " TB" : option + " GB" }}
             </Button>
           </div>
           <div>
@@ -52,7 +55,23 @@
                 name="dynamic"
                 :value="color.name"
               />
-              <label :for="color.key" class="ml-2">{{ color.name }}</label>
+              <label
+                style="
+                  display: block;
+                  justify-items: center;
+                  white-space: nowrap;
+                  font-weight: 500;
+                "
+                :for="color.key"
+                class="ml-2"
+              >
+                {{
+                  selectedMemory === 1
+                    ? selectedMemory + " TB"
+                    : selectedMemory + " GB"
+                }}
+                {{ color.name }}</label
+              >
             </div>
           </div>
         </div>
@@ -82,12 +101,13 @@ const { t } = useI18n();
 const route = useRoute();
 const product = ref(null);
 const selectedColor = ref("Production");
+const selectedMemory = ref(null); // Add this line
 
 const colors = ref([
-  { name: "Black", key: "B" },
-  { name: "Blue", key: "BL" },
-  { name: "Green", key: "G" },
-  { name: "White", key: "W" },
+  { name: "Natural Titanium", key: "NAT" },
+  { name: "Blue Titanium", key: "BET" },
+  { name: "White Titanium", key: "WHT" },
+  { name: "Black Titanium", key: "BLT" },
 ]);
 
 onMounted(() => {
@@ -97,19 +117,15 @@ onMounted(() => {
 </script>
 
 <style scoped>
-.product-grid {
-  display: inline-block;
-  width: 100%; /* Set a fixed width */
-  padding: 10px 0px;
-}
-
 .product-card {
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: space-between; /* Adjust this line */
   gap: 10rem;
   width: 20%; /* Adjust as needed */
-  margin: 0 auto;
+}
+.transparent {
+  opacity: 0.5;
 }
 .button {
   display: inline-block;
@@ -126,7 +142,7 @@ onMounted(() => {
 }
 .membutton {
   margin-right: 2px;
-  height: 40px;
+  height: 36px;
   background-color: #0066cc;
   border: 2px solid #0066cc;
   color: #ffffff;
@@ -139,18 +155,19 @@ onMounted(() => {
   margin-bottom: 10px;
 }
 
-.product-details {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  margin-left: auto;
-}
+.product-grid {
+  display: block;
+  width: 92%; /* Adjust the width as needed */
+  margin: auto; /* Center the grid */
+  padding: 10px 0px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 
-.product-image {
-  width: 468.5px;
-  height: 446.637px;
-  object-fit: cover;
+  .product-image {
+    width: 468.5px;
+    height: 446.637px;
+  }
 }
 .button {
   display: inline-block;

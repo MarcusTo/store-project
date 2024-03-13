@@ -1,11 +1,8 @@
 <template>
   <div class="container">
     <div class="content">
-      <p style="font-weight: bold">{{ t("footer.name") }}</p>
       <p>{{ t("footer.location") }}</p>
-      <div class="info">
         <p>{{ t("footer.info") }}</p>
-      </div>
       <p class="copyright">
         {{ new Date().getFullYear() }} -
         <strong> {{ t("copyright") }}</strong>
@@ -23,10 +20,13 @@ const { t } = useI18n();
 <style scoped>
 
 .content {
-  text-align: center;
   align-items: center;
   justify-content: center;
-  
+  position: sticky;
+  height: auto;
+  font-size: 14px;
+  bottom: 0;
+  margin-top: 50px;
 }
 p {
   margin: 2px;
@@ -34,7 +34,5 @@ p {
 }
 .info{
   display: flex;
-  align-items: center;
-  justify-content: center;
 }
 </style>

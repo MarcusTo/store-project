@@ -10,7 +10,6 @@
   >
     {{ product?.name }}
   </h2>
-  <hr />
   <div class="new-or-used" v-if="product">
     <div class="product-option">
       <img
@@ -50,7 +49,6 @@
       </router-link>
     </div>
   </div>
-  <hr />
   <FooterComp />
 </template>
 
@@ -74,13 +72,20 @@ onMounted(() => {
 
 <style scoped>
 .new-or-used {
-  margin-top: 1rem;
-  margin-bottom: 3rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
   display: flex;
   gap: 10rem;
   justify-content: center;
   align-items: center;
   text-align: center;
+  width: 80%; /* Adjust the width as needed */
+  margin: auto; /* Center the grid */
+  padding: 20px 0px;
+  background-color: #ffffff; 
+  width: 92%;
+  border-radius: 10px; 
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); 
 }
 .product-option {
   display: flex;
