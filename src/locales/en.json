@@ -90,6 +90,28 @@
     "512":"512 GB",
     "1":"1 TB"
   },
+  "iphone15Pro": {
+    "technicalData": "Technical specifications",
+    "newSealedBox": "iPhone 15 Pro. New, sealed box.",
+    "camera": "6.1” Super Retina XDR OLED screen with 120Hz capability",
+    "processor": "A17 Pro Bionic processor",
+    "case": "Titanium case",
+    "actionBtn": "Action button",
+    "chargingPort": "USB-C charging port",
+    "dynamicIsland": "Dynamic Island",
+    "mainCamera": "48-megapixel main camera",
+    "ultraWideTelephotoCamera": "Pro 12-megapixel Ultra Wide, Telephoto camera",
+    "trueDepthFrontCamera": "12-megapixel TrueDepth front camera",
+    "cinematicCamera": "Cinematic camera recording mode & stabilizer",
+    "proResVideo": "ProRes video recording up to 4K 30 fps",
+    "macroMode": "Macro mode for photography",
+    "nightModeLiDAR": "Night Mode with LiDAR scanner",
+    "IPRating": "IP68 splash resistant",
+    "wirelessCharging": "Wireless charging capability",
+    "magsafeCharging": "Magsafe charging capability",
+    "5GCapability": "5G capability",
+    "crashDetection": "Crash Detection"
+  },
   "copyright":"TM&JR"
 }
   

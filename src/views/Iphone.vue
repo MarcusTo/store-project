@@ -15,7 +15,9 @@
   <div class="product-cards">
     <div v-for="product in products" :key="product.id" class="product-card">
       <img :src="product.image" style="width: 200px; height: 200px" />
-      <p style="font-size: 20px; font-weight: 500">{{ product.name }}</p>
+      <p style="font-size: 20px; font-weight: 500; white-space: nowrap">
+        {{ product.name }}
+      </p>
       <p style="font-size: 13px">{{ product.category }}</p>
       <router-link
         style="color: #0051a8"

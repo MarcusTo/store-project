@@ -19,14 +19,20 @@ const { t } = useI18n();
 
 <style scoped>
 
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%; /* Adjust as needed */
+}
+
 .content {
   align-items: center;
   justify-content: center;
-  position: sticky;
+  position: relative;
   height: auto;
   font-size: 14px;
   bottom: 0;
-  margin-top: 50px;
 }
 p {
   margin: 2px;

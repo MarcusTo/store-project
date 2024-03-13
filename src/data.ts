@@ -66,7 +66,7 @@ export const sampleProducts: Product[] = [
         name: 'iPhone-15',
         price: 900.00,
         color: 'Black',
-        memory: [256, 512, 1], 
+        memory: [256, 512], 
         description: 'Lorem ....',
         category: 'NEW',
         image: '/img/products/iphone/iphone-titanium.png'
@@ -76,7 +76,7 @@ export const sampleProducts: Product[] = [
         name: 'iPhone-15',
         price: 900.00,
         color: 'Yellow',
-        memory: [256, 512, 1], 
+        memory: [256, 512], 
         description: 'Lorem ....',
         category: 'NEW AND PREOWNED',
         image: '/img/products/iphone/iphone-titanium.png'
@@ -86,7 +86,7 @@ export const sampleProducts: Product[] = [
         name: 'iPhone-15',
         price: 900.00,
         color: 'Blue',
-        memory: [256, 512, 1], 
+        memory: [256, 512], 
         description: 'Lorem ....',
         category: 'PREOWNED',
         image: '/img/products/iphone/iphone-titanium.png'
@@ -96,7 +96,7 @@ export const sampleProducts: Product[] = [
         name: 'iPhone-15',
         price: 900.00,
         color: 'Green',
-        memory: [256, 512, 1], 
+        memory: [256, 512], 
         description: 'Lorem ....',
         category: 'NEW',
         image: '/img/products/iphone/iphone-titanium.png'

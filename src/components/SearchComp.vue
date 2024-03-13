@@ -52,6 +52,6 @@ const handleInput = () => {};
   top: 10px; 
   left: 10px; 
   margin-left: 54px;
-  font-size: 20px; 
+  font-size: 18px; 
 }
 </style>

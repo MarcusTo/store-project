@@ -76,15 +76,13 @@
           </div>
         </div>
         <p style="font-weight: 500; font-size: 40px">€{{ product.price }}</p>
-        <router-link
-          class="button"
-          :to="`/iphone/new/${product.name}/${product.id}`"
-        >
+        <router-link class="button" :to="`/added-to-cart/${product.id}}`">
           {{ t("cart.addToCart") }}
         </router-link>
       </div>
     </div>
   </div>
+  <ProductInfoComp/>
   <FooterComp />
 </template>
 
@@ -96,6 +94,7 @@ import FooterComp from "@/components/FooterComp.vue";
 import { useRoute } from "vue-router";
 import { sampleProducts } from "@/data.ts";
 import { useI18n } from "vue-i18n";
+import ProductInfoComp from "@/components/ProductInfoComp.vue";
 
 const { t } = useI18n();
 const route = useRoute();
@@ -120,25 +119,14 @@ onMounted(() => {
 .product-card {
   display: flex;
   align-items: center;
-  justify-content: space-between; /* Adjust this line */
   gap: 10rem;
-  width: 20%; /* Adjust as needed */
+  width: 65%;
 }
 .transparent {
   opacity: 0.5;
 }
-.button {
-  display: inline-block;
-  padding: 0px 50px;
-  font-size: 16px;
-  text-align: center;
-  text-decoration: none;
-  color: #fff;
-  background-color: #007bff;
-  border: none;
-  border-radius: 16px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+.product-details{
+  margin-left: 60px;
 }
 .membutton {
   margin-right: 2px;
@@ -157,7 +145,7 @@ onMounted(() => {
 
 .product-grid {
   display: block;
-  width: 92%; /* Adjust the width as needed */
+  width: 90%; /* Adjust the width as needed */
   margin: auto; /* Center the grid */
   padding: 10px 0px;
   background-color: #ffffff;
@@ -170,16 +158,16 @@ onMounted(() => {
   }
 }
 .button {
-  display: inline-block;
-  width: 150px; /* Set a fixed width */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 200px; /* Set a fixed width */
+  height: 36px;
   padding: 10px 0px;
   font-size: 16px;
-  text-align: center;
-  text-decoration: none;
   color: #fff;
   background-color: #007bff;
-  border: none;
-  border-radius: 12px;
+  border-radius: 16px;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }

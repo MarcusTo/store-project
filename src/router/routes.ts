@@ -38,6 +38,11 @@ const routes: Array<RouteRecordRaw> = [
     component: () => import("@/views/Services.vue"),
   },
   {
+    path: ROUTE_PATHS.TO_CART,
+    name: ROUTE_PATHS.TO_CART,
+    component: () => import("@/views/AddedToCart.vue"),
+  },
+  {
     path: ROUTE_PATHS.CART,
     name: ROUTE_PATHS.CART,
     component: () => import("@/views/CartView.vue"),

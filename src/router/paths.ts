@@ -21,6 +21,7 @@ export enum ROUTE_PATHS {
   
   SERVICES = "/services",
   CART = "/cartView",
+  TO_CART= "/added-to-cart",
   CHECKOUT = "/checkout",
   LOGIN = "/login",
   REGISTER = "/register",

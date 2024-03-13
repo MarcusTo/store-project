@@ -12,7 +12,7 @@
     "contacts": "Contact",
     "name": "Pood Pood",
     "location": "Aia 5, 10111 Tallinn",
-    "info":"+372 123 456 789"
+    "info": "+372 123 456 789"
   },
   "home": {
     "homeHeader": "Laias valikus lemmiktooteid.",
@@ -41,7 +41,7 @@
     "repairs": "Hooldus",
     "functioning": "Seade ei tööta korrektselt?",
     "prices": "Hinnakiri",
-    "maintenance":"Hooldus",
+    "maintenance": "Hooldus",
     "diagnostics": "Diagnostika / hinnapakkumine - €29,00",
     "act": "Defekteerimisakt - €25,00",
     "actSwed": "Defekteerimisakt Swedbank - €13,00",
@@ -52,7 +52,7 @@
     "rentIphone": "Asendustelefoni rent - €20,00",
     "macService": "MacBook korraline hooldus - €59,00",
     "imacService": "iMac korraline hooldus - €79,00",
-    "repairParts":"Remont/Varuosad",
+    "repairParts": "Remont/Varuosad",
     "iphoneBatterySE": "iPhone aku vahetus (SE 2. gen ja SE 3. gen) - €109,00",
     "iphoneBatteryX": "iPhone aku vahetus (X ja uuemad) - €129,00",
     "iphoneScreenSE": "iPhone SE (SE 2. gen ja SE 3. gen) ekraanivahetus - €325,00",
@@ -67,21 +67,43 @@
     "lostAirPodsCase": "Kadunud AirPods karp - €101,00",
     "lostAirPodsEarbuds": "Kadunud AirPods klapp - €101,00"
   },
-  "products":{
-    "model":"Model",
+  "products": {
+    "model": "Model",
     "iphone": "iPhone",
     "airpods": "Airpods",
     "mac": "Mac",
-    "buy":"al.",
-    "new":"Uus",
-    "used":"Kasutatud"
+    "buy": "al.",
+    "new": "Uus",
+    "used": "Kasutatud"
   },
-  "cart":{
-    "title":"Ostukorv",
-    "addToCart":"Lisa ostukorvi",
+  "cart": {
+    "title": "Ostukorv",
+    "addToCart": "Lisa ostukorvi",
     "iphone": "iPhone",
     "airpods": "Airpods",
     "mac": "Mac"
+  },
+  "iphone15Pro": {
+    "technicalData": "Tehnilised andmed",
+    "newSealedBox": "iPhone 15 Pro. Uus, kinnises karbis.",
+    "camera": "6.1” Super Retina XDR OLED 120Hz võimekusega ekraan",
+    "processor": "A17 Pro Bionic protsessor",
+    "case": "Titaaniumist korpus",
+    "actionBtn": "Nupp “Action”",
+    "chargingPort": "USB-C laadimispesa",
+    "dynamicIsland": "Dynamic Island",
+    "mainCamera": "48-megapiksline põhikaamera",
+    "ultraWideTelephotoCamera": "Pro 12-megapiksline Ultra Wide, Telephoto kaamera",
+    "trueDepthFrontCamera": "12-megapiksline TrueDepth esikaamera",
+    "cinematicCamera": "Cinematic kaamera salvestusrežiim & stabilisaator",
+    "proResVideo": "ProRes video salvestus kuni 4K 30 fps",
+    "macroMode": "Makroreziim pildistamiseks",
+    "nightModeLiDAR": "Night Mode LiDAR skänneriga",
+    "IPRating": "Pritsmekindel IP68",
+    "wirelessCharging": "Juhtmevaba laadimise võimalus",
+    "magsafeCharging": "Magsafe laadimise võimekus",
+    "5GCapability": "5G võimekus",
+    "crashDetection": "Crash Detection"
   },
   "dummyText": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In eget eleifend sapien. Morbi interdum nulla nulla, ac ullamcorper ipsum lacinia at. Nam ut neque lobortis, tempus quam non, pharetra lorem. Etiam in lorem libero. Ut bibendum eros eu arcu fringilla vehicula. Duis porttitor tellus vitae urna maximus euismod. Vivamus in tortor nisl.",
   "copyright": "TM&JR"
