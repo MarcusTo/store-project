@@ -19,11 +19,13 @@
           <router-link :to="`/iphone/new/${item.name}/${item.id}`" class="item-name">{{ item.name }}</router-link>
           <span>{{ item.selectedMemory }} TB</span>
           <span>{{ item.selectedColor }}</span>
+          <button @click="removeFromCart(item)">Remove from cart</button>
+
         </div>
       </div>
       <p class="item-price">€{{ item.price }}</p>
     </div>
-    <hr>
+    <hr v-if="cart.cartItems.length === 1">
 
   </div>
     <div>
@@ -43,10 +45,10 @@
         </div>
       </div>
     </div>
-
     <div class="empty-cart" v-if="cart.cartItems.length === 0">
       <img src="/img/cart_placeholder.svg" />
     </div>
+
   </div>
   <FooterComp />
 </template>
@@ -64,6 +66,9 @@ const { t } = useI18n();
 const totalPrice = computed(() => {
   return cart.cartItems.reduce((total, item) => total + item.price, 0);
 });
+const removeFromCart = (item) => {
+  cart.remove(item)
+}
 </script>
 
 <style scoped>
