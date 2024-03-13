@@ -76,13 +76,13 @@
           </div>
         </div>
         <p style="font-weight: 500; font-size: 40px">€{{ product.price }}</p>
-        <router-link class="button" :to="`/added-to-cart/${product.id}}`">
+        <button class="button" @click="addToCart">
           {{ t("cart.addToCart") }}
-        </router-link>
+        </button>
       </div>
     </div>
   </div>
-  <ProductInfoComp/>
+  <ProductInfoComp />
   <FooterComp />
 </template>
 
@@ -94,13 +94,17 @@ import FooterComp from "@/components/FooterComp.vue";
 import { useRoute } from "vue-router";
 import { sampleProducts } from "@/data.ts";
 import { useI18n } from "vue-i18n";
+import { useCartStore } from "@/stores/cart";
+import { useRouter } from "vue-router";
 import ProductInfoComp from "@/components/ProductInfoComp.vue";
 
 const { t } = useI18n();
 const route = useRoute();
+const router = useRouter();
 const product = ref(null);
 const selectedColor = ref("Production");
 const selectedMemory = ref(null); // Add this line
+const cart = useCartStore();
 
 const colors = ref([
   { name: "Natural Titanium", key: "NAT" },
@@ -108,6 +112,16 @@ const colors = ref([
   { name: "White Titanium", key: "WHT" },
   { name: "Black Titanium", key: "BLT" },
 ]);
+
+const addToCart = () => {
+  const cartItem = {
+    ...product.value,
+    selectedColor: selectedColor.value,
+    selectedMemory: selectedMemory.value,
+  };
+  cart.addToCart(cartItem);
+  router.push("/CartView");
+};
 
 onMounted(() => {
   const productId = Number(route.params.productId);
@@ -125,7 +139,7 @@ onMounted(() => {
 .transparent {
   opacity: 0.5;
 }
-.product-details{
+.product-details {
   margin-left: 60px;
 }
 .membutton {

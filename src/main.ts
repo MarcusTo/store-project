@@ -1,7 +1,6 @@
 import { createApp } from 'vue'
 import '@/assets/style.css'
 import App from './App.vue'
-
 import router from '@/router';
 import 'primeicons/primeicons.css'
 import i18n from './config/18n.config';
