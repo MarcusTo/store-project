@@ -112,6 +112,9 @@
     "5GCapability": "5G capability",
     "crashDetection": "Crash Detection"
   },
+  "checkout":{
+    "checkout":"Checkout"
+  },
   "copyright":"TM&JR"
 }
   

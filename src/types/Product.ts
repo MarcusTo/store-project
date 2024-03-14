@@ -8,6 +8,7 @@ export interface Product {
   color:string
   description: string
   category: string
+  quantity: number
   image: string 
 }
 

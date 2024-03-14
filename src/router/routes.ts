@@ -45,7 +45,7 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: ROUTE_PATHS.CHECKOUT,
     name: ROUTE_PATHS.CHECKOUT,
-    component: () => import("@/views/Checkout.vue"),
+    component: () => import("@/views/CheckoutView.vue"),
   },
   {
     path: ROUTE_PATHS.NEW_USED_IPHONE,

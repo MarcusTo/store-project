@@ -75,7 +75,7 @@
             </div>
           </div>
         </div>
-        <p style="font-weight: 500; font-size: 40px">€{{ product.price }}</p>
+        <p style="font-weight: 500; font-size: 40px">€{{ product.price.toFixed(2) }}</p>
         <button class="button" @click="addToCart">
           {{ t("cart.addToCart") }}
         </button>

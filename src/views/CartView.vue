@@ -28,22 +28,23 @@
             <span>{{ item.selectedMemory }} TB</span>
             <span>{{ item.selectedColor }}</span>
             <div class="quantity-control">
-              <button
+              <Button
                 class="pi pi-plus"
-                @click="increaseQuantity(item)"
-              ></button>
+                @click="cart.increaseQuantity(item)"
+              ></Button>
               <span class="quantity-counter">{{ item.quantity }}</span>
-              <button
+              
+              <Button
                 class="pi pi-minus"
-                @click="decreaseQuantity(item)"
-              ></button>
+                @click="cart.decreaseQuantity(item)"
+              ></Button>
             </div>
             <div class="item-price-trash">
-              <p class="item-price">€{{ item.price }}</p>
-              <button
+              <p class="item-price">€{{ item.price.toFixed(2) }}</p>
+              <Button
                 class="pi pi-trash"
                 @click="removeFromCart(item)"
-              ></button>
+              ></Button>
             </div>
           </div>
         </div>
@@ -60,12 +61,25 @@
             font-weight: 500;
           "
         >
-          Kokku: {{ totalPrice }} €
+          Kokku: {{ totalPrice.toFixed(2) }} €
         </h2>
         <div class="button-container">
           <router-link :to="`/checkout`">
             <Button style="background-color: #0070c9">
               Vormista Tellimus
+            </Button>
+          </router-link>
+          <router-link :to="`/`">
+            <Button
+              style="
+                background-color: transparent;
+                color: #0070c9;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+              "
+            >
+              Jätka ostlemist
             </Button>
           </router-link>
         </div>
@@ -87,13 +101,13 @@ import { useI18n } from "vue-i18n";
 
 const cart = useCartStore();
 const { t } = useI18n();
-
 const totalPrice = computed(() => {
-  return cart.cartItems.reduce((total, item) => total + item.price, 0);
+  return cart.cartItems.reduce((total, item) => total + item.price * item.quantity, 0);
 });
 const removeFromCart = (item) => {
   cart.remove(item);
 };
+
 </script>
 
 <style scoped>
@@ -161,7 +175,7 @@ const removeFromCart = (item) => {
   align-items: right;
   font-size: 22px;
   font-weight: 500;
-  margin-top: -100px; 
+  margin-top: -100px;
 
   justify-content: flex-end;
 }
@@ -185,7 +199,10 @@ const removeFromCart = (item) => {
   display: flex;
   justify-content: center;
   align-items: center;
+  font-size: 18px;
   margin-bottom: 15px;
+  gap: 10px;
+  flex-direction: column;
 }
 
 .empty-cart {
