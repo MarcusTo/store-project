@@ -10,7 +10,7 @@
   >
     {{ t("products.iphone") }}
   </h2>
-  <SearchComp />
+  <SearchComp @search="handleSearch"/>
   <hr />
   <div class="product-cards">
     <div v-for="product in products" :key="product.id" class="product-card">
@@ -39,6 +39,12 @@ import { sampleProducts } from "@/data.ts";
 
 const { t } = useI18n();
 const products = sampleProducts;
+
+const handleSearch = () =>{
+  
+}
+
+
 </script>
 
 <style scoped>

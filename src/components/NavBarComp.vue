@@ -27,7 +27,7 @@
                 color: '#4B5563',
                 display: 'flex',
                 alignItems: 'center',
-                width:'50px',
+                width: '50px',
               }"
               @click="setLocale('et')"
             >
@@ -55,23 +55,24 @@
               <li>
                 <img
                   src="/img/flags/united-kingdom-rounded.png"
-                  style="
-                    padding-right: 10px;
-                    padding-left: 6px;
-                    width: 15px;
-                  "
+                  style="padding-right: 10px; padding-left: 6px; width: 15px"
                 />
               </li>
             </div>
           </ul>
         </div>
-        
       </div>
       <div>
         <button class="cart-button">
           <RouterLink to="/cartView" class="nav-bar__router-link">
-            <i style="color: #f8f8f8;" class="pi pi-shopping-bag"></i
-          ></RouterLink>
+            <i
+              :style="{
+              }"
+              class="pi pi-shopping-bag"
+            >
+            </i>
+            {{ isCartEmpty ? "" : `${totalPrice.toFixed(2)} €` }}
+          </RouterLink>
         </button>
       </div>
     </div>
@@ -79,11 +80,24 @@
 </template>
 <script setup lang="ts">
 import { computed } from "vue";
+import { useCartStore } from "@/stores/cart";
 import { setLocale } from "@/config/18n.config";
 import i18n from "@/config/18n.config";
 
 const activeLang = computed(() => {
   return i18n.global.locale.value;
+});
+
+const cart = useCartStore();
+
+const isCartEmpty = computed(() => {
+  return cart.cartItems.length === 0;
+});
+const totalPrice = computed(() => {
+  return cart.cartItems.reduce(
+    (total, item) => total + item.price * item.quantity,
+    0
+  );
 });
 </script>
 
@@ -97,14 +111,14 @@ const activeLang = computed(() => {
 }
 a {
   font-weight: 400;
-  color: #c5c5c5; 
+  color: #c5c5c5;
   text-decoration: inherit;
 }
 a:hover {
   color: #ffffff; /* Darker blue */
 }
 .cart-button {
-  background-color: #0051A8;
+  background-color: #0051a8;
   margin-right: 50px;
 }
 
@@ -131,7 +145,7 @@ a:hover {
 
 @media screen and (min-width: 1200px) {
   .navbar-user {
-    padding-left: 48rem;  
+    padding-left: 48rem;
   }
 }
 
@@ -143,6 +157,6 @@ a:hover {
 
 .custom-list-item {
   padding: 10px;
-  color: #0070C9; /* Apple blue text color */
+  color: #0070c9; /* Apple blue text color */
 }
 </style>

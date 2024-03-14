@@ -12,19 +12,6 @@
   </h2>
   <SearchComp />
   <hr />
-  <div class="product-cards">
-    <div v-for="product in products" :key="product.id" class="product-card">
-      <img :src="product.image" style="width: 200px; height: 200px" />
-      <p style="font-size: 20px; font-weight: 400">{{ product.name }}</p>
-      <p style="font-size: 13px">{{ product.category }}</p>
-      <router-link
-        style="color: #0051a8"
-        :to="`/mac/new-or-used/${product.name}/${product.id}`"
-      >
-        {{ t("products.buy") }} €{{ product.price }}
-      </router-link>
-    </div>
-  </div>
   <FooterComp />
 </template>
 

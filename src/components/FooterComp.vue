@@ -1,8 +1,16 @@
 <template>
-  <div class="container">
+  <div class="footer">
     <div class="content">
       <p>{{ t("footer.location") }}</p>
-        <p>{{ t("footer.info") }}</p>
+      <div
+        class=""
+      >
+        <a href="mailto:info@pood.ee" style="color: #0070c9">Info@pood.ee</a>
+        <a href="telto:5891 0000" style="color: #0070c9; margin: 0 5px">{{
+          t("footer.info")
+        }}</a>
+      </div>
+
       <p class="copyright">
         {{ new Date().getFullYear() }} -
         <strong> {{ t("copyright") }}</strong>
@@ -18,18 +26,22 @@ const { t } = useI18n();
 </script>
 
 <style scoped>
-
-.container {
+.footer {
+  display: flex;
+  justify-content: center;
+  position: sticky;
+  align-items: center;
+  height: 100%;
+}
+.copyright {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100%; /* Adjust as needed */
 }
-
 .content {
   align-items: center;
   justify-content: center;
-  position: relative;
+  position: sticky;
   height: auto;
   font-size: 14px;
   bottom: 0;
@@ -37,8 +49,5 @@ const { t } = useI18n();
 p {
   margin: 2px;
   padding: 2px;
-}
-.info{
-  display: flex;
 }
 </style>
