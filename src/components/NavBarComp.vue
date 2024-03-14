@@ -64,10 +64,8 @@
       </div>
       <div>
         <button class="cart-button">
-          <RouterLink to="/cartView" class="nav-bar__router-link">
+          <RouterLink style="font-weight: 500;" to="/cartView" class="nav-bar__router-link">
             <i
-              :style="{
-              }"
               class="pi pi-shopping-bag"
             >
             </i>
@@ -120,6 +118,7 @@ a:hover {
 .cart-button {
   background-color: #0051a8;
   margin-right: 50px;
+  font-weight: 500;
 }
 
 .navbar-user {

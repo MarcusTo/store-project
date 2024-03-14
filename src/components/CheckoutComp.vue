@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<!-- <script setup lang="ts">
 import { onMounted, ref } from "vue";
 import { Stripe, StripeElements, loadStripe } from "@stripe/stripe-js";
 import { API } from "aws-amplify";
@@ -181,4 +181,4 @@ const handleSubmit = async (e: Event) => {
 h3 {
   font-size: xx-large;
 }
-</style>
+</style> -->
