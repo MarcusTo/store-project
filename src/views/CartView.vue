@@ -38,10 +38,15 @@
                 @click="decreaseQuantity(item)"
               ></button>
             </div>
-            <button class="pi pi-trash" @click="removeFromCart(item)"></button>
+            <div class="item-price-trash">
+              <p class="item-price">€{{ item.price }}</p>
+              <button
+                class="pi pi-trash"
+                @click="removeFromCart(item)"
+              ></button>
+            </div>
           </div>
         </div>
-        <p class="item-price">€{{ item.price }}</p>
       </div>
       <hr v-if="cart.cartItems.length === 1" />
     </div>
@@ -119,8 +124,8 @@ const removeFromCart = (item) => {
 .pi-trash {
   background-color: transparent;
   color: #007bff;
-  margin-left: 62rem;
   border: none;
+  margin-left: 62rem;
 }
 .quantity-counter {
   margin: 0 10px;
@@ -142,6 +147,7 @@ const removeFromCart = (item) => {
 .item-details {
   display: flex;
   flex-direction: column;
+  align-items: flex-start; /* Align items to the left */
 }
 
 .item-name {
@@ -155,7 +161,14 @@ const removeFromCart = (item) => {
   align-items: right;
   font-size: 22px;
   font-weight: 500;
+  margin-top: -100px; 
+
   justify-content: flex-end;
+}
+.item-price-trash {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
 }
 
 .cart-image {
