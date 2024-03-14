@@ -96,8 +96,8 @@ const activeLang = computed(() => {
   font-size: 14px;
 }
 a {
-  font-weight: 500;
-  color: #8a8a8a; 
+  font-weight: 400;
+  color: #c5c5c5; 
   text-decoration: inherit;
 }
 a:hover {

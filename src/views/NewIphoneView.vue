@@ -101,9 +101,10 @@ import ProductInfoComp from "@/components/ProductInfoComp.vue";
 const { t } = useI18n();
 const route = useRoute();
 const router = useRouter();
+
 const product = ref(null);
-const selectedColor = ref("Production");
-const selectedMemory = ref(null); // Add this line
+const selectedColor = ref(null);
+const selectedMemory = ref(null); 
 const cart = useCartStore();
 
 const colors = ref([
@@ -127,6 +128,7 @@ onMounted(() => {
   const productId = Number(route.params.productId);
   product.value = sampleProducts.find((p) => p.id === productId);
 });
+
 </script>
 
 <style scoped>
@@ -175,8 +177,8 @@ onMounted(() => {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 200px; /* Set a fixed width */
-  height: 36px;
+  width: 200px; 
+  height: 46px;
   padding: 10px 0px;
   font-size: 16px;
   color: #fff;
