@@ -32,16 +32,18 @@
             </Button>
           </div>
           <p style="font-size: 13px; font-weight: 500">VALI VÄRV</p>
-          <div class="color">
+          <div class="color" v-if="product.color && product.color.length">
             <Button
+              v-for="(color, index) in product.color"
+              :key="index"
               class="color-button"
               :class="{
-                'color-button-selected': selectedColor.value === product.color,
+                'color-button-selected': selectedColor.value === color,
               }"
               style="align-items: center; white-space: nowrap"
-              @click="selectedColor.value = product.color"
+              @click="selectedColor.value = color"
             >
-              {{ product.color }}
+              {{ color }}
             </Button>
           </div>
         </div>
@@ -76,6 +78,7 @@ const addToCart = () => {
   const cartItem = {
     ...product.value,
     id: product.value._id,
+    selectedColor: selectedColor.value, // include the selected color
   };
   cart.addToCart(cartItem);
   router.push("/CartView");
@@ -95,7 +98,6 @@ onMounted(async () => {
   console.log(product.value); // Add this line
 });
 </script>
-
 <style scoped>
 .product-card {
   display: flex;
@@ -114,7 +116,6 @@ onMounted(async () => {
   height: 36px;
   background-color: #E5F2FF(210, 210, 210);
   border: 2px solid;
-  border: 2px solid;
   color: #ffffff;
   font-size: 13px;
   font-weight: 600;
@@ -124,6 +125,26 @@ onMounted(async () => {
   margin-bottom: 10px;
 }
 .mem-button-selected {
+  background-color: #0066cc;
+}
+.color {
+  display: relative;
+  flex-wrap: wrap; 
+  gap: 10px; 
+}
+.color-button{
+  margin-right: 2px;
+  height: 36px;
+  background-color: #E5F2FF(210, 210, 210);
+  border: 2px solid;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 600;
+  border-radius: 12px;
+  padding-left: 14px;
+  padding-right: 14px;
+}
+.color-button-selected {
   background-color: #0066cc;
 }
 .product-grid {

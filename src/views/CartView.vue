@@ -28,8 +28,8 @@
             <span v-if="product.category !== 'airpods'">{{
               formatMemory(product.memory)
             }}</span>
-            <span v-if="product.category !== 'airpods'">{{
-              product.color
+            <span v-if="product.selectedColor">{{
+              product.selectedColor.value
             }}</span>
             <div class="quantity-control">
               <Button
@@ -119,7 +119,7 @@ const formatMemory = (memory) => {
   return memory === 1 ? `${memory} TB` : `${memory} GB`;
 };
 onMounted(async () => {
-  const id = route.params.id; // Get the id from the route parameters
+  const id = route.params.id;
   const response = await fetch(`http://localhost:3000/api/products/`);
   if (!response.ok) {
     throw new Error(`HTTP error! status: ${response.status}`);

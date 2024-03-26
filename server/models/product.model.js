@@ -17,7 +17,7 @@ const ProductSchema = mongoose.Schema(
         default: 0,
     },
     color: {
-      type: String,
+      type: [String],
       required: true,
     },
     description: {
