@@ -7,6 +7,7 @@
     "dev": "vite",
     "main": "index.ts",
     "build": "vue-tsc && vite build",
+    "preview": "vite preview"
     "preview": "vite preview",
     "start": "npx nodemon"
   },
@@ -25,8 +26,8 @@
     "primevue": "^3.46.0",
     "sass": "^1.71.1",
     "sequelize": "^6.37.1",
-    "stripe": "^14.20.0",
     "swiper": "^11.0.7",
+    "ts-node": "^10.9.2",
     "vue": "^3.3.11",
     "vue-i18n": "^9.9.0",
     "vue-router": "^4.2.5",
@@ -36,6 +37,7 @@
     "@types/node": "^20.11.26",
     "@vitejs/plugin-vue": "^4.5.2",
     "nodemon": "^3.1.0",
+    "typescript": "^5.3.3",
     "ts-node": "^10.9.2",
     "typescript": "^5.4.2",
     "vite": "^5.0.8",
