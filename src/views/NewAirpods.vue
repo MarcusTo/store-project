@@ -6,6 +6,8 @@
     justify-content: center;
     align-items: center;
     font-size: 32px;
+    margin-top: 30px;
+    margin-bottom: 30px;
   "
 </h2>
   {{ product && product.name }}
@@ -97,7 +99,7 @@ onMounted(async () => {
   height: 446.637px;
 }
 .button {
-  display: flex;
+  display: relative;
   justify-content: center;
   align-items: center;
   width: 200px;
