@@ -65,7 +65,29 @@
     "lostAirPodsProEarbuds": "Lost AirPods Pro earbuds - €121.00",
     "lostWirelessAirPodsCase": "Lost Wireless AirPods case - €101.00",
     "lostAirPodsCase": "Lost AirPods case - €101.00",
-    "lostAirPodsEarbuds": "Lost AirPods earbuds - €101.00"
+    "lostAirPodsEarbuds": "Lost AirPods earbuds - €101.00",
+        "exchange_offer": "We offer official Apple paid device exchange, in case the device is no longer under warranty (due to accidental or mechanical damage) or the warranty has expired. Your old/broken device will be exchanged for a new one.",
+        "exchange_prices": {
+          "iPhone_6_6S": "iPhone 6/6S exchange €415",
+          "iPhone_6Plus_6SPlus": "iPhone 6 Plus/6S Plus exchange €505",
+          "iPhone_7": "iPhone 7 exchange €430",
+          "iPhone_7Plus": "iPhone 7 Plus exchange €525",
+          "iPhone_SE_2020": "iPhone SE (2020) exchange €425",
+          "iPhone_SE_2022": "iPhone SE (2022) exchange €495",
+          "iPhone_8": "iPhone 8 exchange €525",
+          "iPhone_8Plus": "iPhone 8 Plus exchange €525",
+          "iPhone_XR_11_12Mini_13Mini": "iPhone XR/11/12 Mini/13 mini exchange €525",
+          "iPhone_12_13": "iPhone 12/iPhone 13 exchange €635",
+          "iPhone_X_XS_11Pro_12Pro_13Pro": "iPhone X/XS/11 Pro/12 Pro/13 Pro exchange €830",
+          "iPhone_XSMax_11ProMax_12ProMax_14_15Plus": "iPhone XS Max/11 Pro Max/12-13 Pro Max/14-15 Plus exchange €915",
+          "iPhone_14_15": "iPhone 14/15 exchange €830",
+          "iPhone_14Pro_15Pro": "iPhone 14 Pro/15 Pro exchange €1005",
+          "iPhone_14ProMax_15ProMax": "iPhone 14 Pro Max/15 Pro Max exchange €1080"
+        },
+        "exchange_broken_device": "Broken Apple device for a new one",
+        "icloud_lock_message": "! iCloud lock (Find My iPhone) must be removed from the device!",
+        "handling_fee_message": "Handling fee if the device cannot be exchanged (device has been previously repaired) €20",
+        "warranty_message": "Exchanged products are covered by the warranty of the old device or a 3-month warranty if the original warranty period was shorter or has expired."
   },
   "products":{
     "model":"Model",

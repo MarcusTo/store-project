@@ -1,20 +1,31 @@
 <template>
   <NavBarComp />
-  <h2>
-    style="
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-size: 32px;
-    "
-    {{ product?.name }}
-  </h2>
+  <h2
+  style="
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 32px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+  "
+>
+  {{ product && product.name }}
+</h2>
   <div class="product-grid">
     <div class="product-card" v-if="product" :key="product._id">
       <img :src="product.image" alt="Product Image" class="product-image" />
       <div class="product-details">
         <div class="form">
-        <p style="font-weight: 500; font-size: 40px">€ {{ product.price }}</p>
+          <button v-for="memory in product.memorySizes" :key="memory" @click="selectMemory(memory)">
+            {{ memory }}
+          </button>
+          <div v-for="color in product.colors" :key="color">
+            <input type="radio" :value="color" v-model="selectedColor" :id="color" />
+            <label :for="color">{{ color }}</label>
+          </div>
+        </div>
+        <p style="font-weight: 500; font-size: 40px">€ {{ product.price.toFixed(2) }}</p>
         <Button class="button" @click="addToCart(product)">
           {{ t("cart.addToCart") }}
         </Button>
@@ -23,7 +34,6 @@
   </div>
   <FooterComp />
 </template>
-
 <script setup lang="ts">
 import { ref, onMounted } from "vue";
 import Button from "primevue/button";
@@ -33,7 +43,6 @@ import { useI18n } from "vue-i18n";
 import { useCartStore } from "@/stores/cart";
 import { useRoute, useRouter } from "vue-router";
 const { t } = useI18n();
-
 const router = useRouter();
 const cart = useCartStore();
 const product = ref(null);
@@ -44,6 +53,9 @@ const addToCart = () => {
   cart.addToCart(cartItem);
   router.push("/CartView");
 };
+const selectedColor = ref(null);
+const selectMemory = (memory) => {
+}
 const route = useRoute();
 onMounted(async () => {
   const id = route.params.id; // Get the id from the route parameters
@@ -55,7 +67,6 @@ onMounted(async () => {
   product.value = data;
   });
 </script>
-
 <style scoped>
 .product-card {
   display: flex;
