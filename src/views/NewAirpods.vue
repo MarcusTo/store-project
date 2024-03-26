@@ -1,13 +1,15 @@
 <template>
   <NavBarComp />
   <h2>
-    style="
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-size: 32px;
-    "
-  </h2>
+  style="
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 32px;
+  "
+</h2>
+  {{ product && product.name }}
+</h2>
   <div class="product-grid">
     <div class="product-card" v-if="product" :key="product._id">
       <img :src="product.image" alt="Product Image" class="product-image" />
@@ -50,11 +52,10 @@ onMounted(async () => {
   if (!response.ok) {
     throw new Error(`HTTP error! status: ${response.status}`);
   }
-});
   const data = await response.json();
   product.value = data;
+  });
 </script>
-
 <style scoped>
 .product-card {
   display: flex;
