@@ -28,6 +28,11 @@ const routes: Array<RouteRecordRaw> = [
     component: () => import("@/views/Airpods.vue"),
   },
   {
+    path: ROUTE_PATHS.NEW_AIRPODS,
+    name: ROUTE_PATHS.NEW_AIRPODS,
+    component: () => import('@/views/NewAirpods.vue')
+  },
+  {
     path: ROUTE_PATHS.MAC,
     name: ROUTE_PATHS.MAC,
     component: () => import("@/views/Mac.vue"),
@@ -48,21 +53,9 @@ const routes: Array<RouteRecordRaw> = [
     component: () => import("@/views/CheckoutView.vue"),
   },
   {
-    path: ROUTE_PATHS.NEW_USED_IPHONE,
-    name: ROUTE_PATHS.NEW_USED_IPHONE,
-    component: () => import("@/views/NewUsed.vue"),
-    props: true,
-  },
-  {
     path: ROUTE_PATHS.NEW_IPHONE,
     name: ROUTE_PATHS.NEW_IPHONE,
     component: () => import("@/views/NewIphoneView.vue"),
-    props: true, // Enable props
-  },
-  {
-    path: ROUTE_PATHS.USED_IPHONE,
-    name: ROUTE_PATHS.USED_IPHONE,
-    component: () => import("@/views/UsedIphoneView.vue"),
     props: true, // Enable props
   },
 ];

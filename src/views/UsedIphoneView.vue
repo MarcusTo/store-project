@@ -1,4 +1,4 @@
-<template>
+<!-- <template>
   <NavBarComp />
   <div class="product-grid">
     <div v-if="product" class="product-card">
@@ -153,4 +153,4 @@ onMounted(() => {
 .button:hover {
   background-color: #0056b3;
 }
-</style>
+</style> -->

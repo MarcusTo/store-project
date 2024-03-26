@@ -1,5 +1,5 @@
 <template>
-  <NavBarComp />
+  <!-- <NavBarComp />
   <h2
     style="
       display: flex;
@@ -12,7 +12,7 @@
   </h2>
   <div class="new-or-used" v-if="product">
     <div class="product-option">
-      <img
+      <imgč
         :src="product.image"
         alt="Product Image"
         style="
@@ -25,7 +25,7 @@
       <p style="font-size: 20px; font-weight: 500;">{{ t("products.used") }} {{ product.name }}</p>
       <router-link
         class="button"
-        :to="`/iphone/used/${product.name}/${product.id}`"
+        :to="`/iphone/used/${product.name}/${product._id}`"
       >
         <p>{{ t("products.buy") }} €{{ product.price }} ></p>
       </router-link>
@@ -44,33 +44,43 @@
       <p style="font-size: 20px; font-weight: 500;">{{ t("products.new") }} {{ product.name }}</p>
       <router-link
         class="button"
-        :to="`/iphone/new/${product.name}/${product.id}`"      >
-        <p>{{ t("products.buy") }} €{{ product.price }} ></p>
+        :to="`/iphone/new/${product._id}`"      >
+        <p>{{ t("products.buy") }} €{{ product.price }}</p>
       </router-link>
     </div>
   </div>
-  <FooterComp />
+  <FooterComp /> -->
 </template>
 
-<script setup lang="ts">
+<!-- <script setup lang="ts">
 import { ref, onMounted } from "vue";
 import NavBarComp from "@/components/NavBarComp.vue";
 import FooterComp from "@/components/FooterComp.vue";
 import { useRoute } from "vue-router";
-import { sampleProducts } from "@/data.ts";
 import { useI18n } from "vue-i18n";
 
 const route = useRoute();
 const { t } = useI18n();
-const product = ref(null);
 
-onMounted(() => {
-  const productId = Number(route.params.productId);
-  product.value = sampleProducts.find((p) => p.id === productId);
+const productId = route.params._id; 
+const product = ref(null); 
+
+onMounted(async () => {
+  try {
+    const response = await fetch(`http://localhost:8080/getProduct/${productId}`);
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    const data = await response.json();
+    product.value = data; // Set the product data
+  } catch (error) {
+    console.error("Error:", error);
+  }
 });
-</script>
 
-<style scoped>
+</script> -->
+<!-- 
+<!-- <style scoped>
 .new-or-used {
   margin-top: 2rem;
   margin-bottom: 2rem;
@@ -109,5 +119,5 @@ onMounted(() => {
 
 .button:hover {
   background-color: #0056b3;
-}
-</style>
+} -->
+<!-- </style> --> 

@@ -1,7 +1,6 @@
 <template>
   <NavBarComp />
   <ProductCardComp/>
-  <hr/>
   <CardComp/>
   <hr/>
   <ServiceCardComp/>
@@ -20,6 +19,6 @@ import FooterComp from "@/components/FooterComp.vue"
 <style scoped>
 hr {
   border: none;
-  border-top: 1px solid #eeeeee; 
+  border-top: 1px solid #FAFAFAFA; 
 }
 </style>

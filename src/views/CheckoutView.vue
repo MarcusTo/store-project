@@ -3,76 +3,132 @@
   <h2 class="checkout-title">
     {{ t("checkout.checkout") }}
   </h2>
-  <div class="info-container">
-    <div class="user-info">
-    <div class="user-title">
-      <p>Kontaktandmed</p>
-    </div>
-    <div class="input-container">
-      <InputText
-        class="custom-text"
-        type="text"
-        v-model="name"
-        placeholder="Enter your name"
-      />
-      <InputText
-        class="custom-text"
-        type="text"
-        v-model="mail"
-        placeholder="Enter your email"
-      />
-      <InputText
-        class="custom-text"
-        type="text"
-        v-model="phoneNumber"
-        placeholder="Enter your phone number"
-      />
-      <InputText
-        class="custom-text"
-        type="text"
-        v-model="address"
-        placeholder="Enter your address"
-      />
-      <InputText
-        class="custom-text"
-        type="text"
-        v-model="info"
-        placeholder="Enter additional info"
-      />
-    </div>
-  </div>
   <form>
-    <div class="payment-info">
-    <RadioButton/>
-    <RadioButton/>
-    <RadioButton/>
-    <RadioButton/>
-  </div>
+    <div class="info-container">
+      <div class="user-info">
+        <div class="user-title">
+          <p>Kontaktandmed</p>
+        </div>
+        <div class="input-container">
+          <InputText
+            class="custom-text"
+            type="text"
+            v-model="name"
+            placeholder="Nimi"
+          />
+          <InputText
+            class="custom-text"
+            type="text"
+            v-model="mail"
+            placeholder="Email"
+          />
+          <InputText
+            class="custom-text"
+            type="text"
+            v-model="phoneNumber"
+            placeholder="Telefoninumber"
+          />
+          <InputText
+            class="custom-text"
+            type="text"
+            v-model="address"
+            placeholder="Aadress"
+          />
+          <InputText
+            class="custom-text"
+            type="text"
+            v-model="info"
+            placeholder="Lisainfo"
+          />
+        </div>
+      </div>
+      <div class="payment-info">
+        <InputText
+          v-model="userInfo.creditCardNumber"
+          placeholder="Enter your credit card number"
+        />
+        <InputText
+          v-model="userInfo.expirationDate"
+          placeholder="Enter your expiration date (MM/YY)"
+        />
+        <InputText v-model="userInfo.cvv" placeholder="Enter your CVV" />
+      </div>
+    </div>
+    <div class="card-info"></div>
   </form>
+  <div class="total-price">
+    <h2>Total Price: €{{ totalPrice.toFixed(2) }}</h2>
+  </div>
+
+  <div class="submit-button">
+    <Button class="button">Maksma</Button>
   </div>
   <FooterComp />
 </template>
 
 <script setup lang="ts">
+import { ref, computed } from "vue";
 import NavBarComp from "@/components/NavBarComp.vue";
+import Button from "primevue/button";
+import { useCartStore } from "@/stores/cart";
 import InputText from "primevue/inputtext";
-import RadioButton from "primevue/radiobutton";
 import FooterComp from "@/components/FooterComp.vue";
 import { useI18n } from "vue-i18n";
 
+const cart = useCartStore();
+
+const totalPrice = computed(() => {
+  return cart.cartItems.reduce(
+    (total, product) => total + product.price * product.quantity,
+    0
+  );
+});
+
+const userInfo = ref({
+  name: "",
+  email: "",
+  phoneNumber: "",
+  address: "",
+  info: "",
+  creditCardNumber: "", // New field
+  expirationDate: "", // New field
+  cvv: "", // New field
+  errors: {
+    name: "",
+    email: "",
+    phoneNumber: "",
+    address: "",
+    info: "",
+    creditCardNumber: "", // New field
+    expirationDate: "", // New field
+    cvv: "", // New field
+  },
+});
+
+const validateForm = () => {
+  // New validation logic
+  userInfo.value.errors.creditCardNumber = userInfo.value.creditCardNumber
+    ? ""
+    : "Credit card number is required";
+  userInfo.value.errors.expirationDate = userInfo.value.expirationDate
+    ? ""
+    : "Expiration date is required";
+  userInfo.value.errors.cvv = userInfo.value.cvv ? "" : "CVV is required";
+
+  userInfo.value.valid = Object.values(userInfo.value.errors).every((x) => !x);
+};
 const { t } = useI18n();
 </script>
 
 <style scoped>
 .info-container {
   display: flex;
-  gap: 5px;  
+  gap: 5px;
 }
 .container {
   display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 20px;  /* Adjust as needed */
+  justify-content: center;
+  align-items: center;
 }
 
 .custom-text {
@@ -83,6 +139,30 @@ const { t } = useI18n();
   border-radius: 10px;
   font-size: 14px;
   height: 35px;
+  padding-left: 10px;
+}
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 140px;
+  height: 44px;
+  font-size: 16px;
+  color: #fff;
+  background-color: #007bff;
+  border-radius: 16px;
+  transition: background-color 0.3s ease;
+}
+.total-price {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.submit-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .input-container {
   display: flex;
@@ -105,20 +185,17 @@ const { t } = useI18n();
   font-size: 22px;
   font-weight: 500;
 }
-.user-info{
+.user-info {
   align-items: center;
   justify-content: center;
   padding: 0 8rem;
 }
 
-.payment-title {
-  font-size: 22px;
-  font-weight: 500;
-}
 .payment-info {
-  display:flex;
-  align-items: center;
+  display: flex;
+  flex-direction: column;
   width: 400px;
+  gap: 15px;
   padding: 20px;
   background-color: #ffff;
   border: 5px solid #ccc;

@@ -32,6 +32,8 @@ const { t } = useI18n();
   position: sticky;
   align-items: center;
   height: 100%;
+  margin-top: 16rem;
+  margin-bottom: 5rem
 }
 .copyright {
   display: flex;

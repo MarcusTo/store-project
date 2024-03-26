@@ -3,7 +3,6 @@
     <div class="input-group">
       <input
         class="text"
-        v-model="searchText"
         type="text"
         :placeholder="t('products.model')"
         @input="handleInput"
@@ -14,14 +13,17 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from "vue";
+import { ref, defineEmits } from "vue";
 import { useI18n } from "vue-i18n";
 
 const {t} = useI18n();
-let searchText = ref("");
+const searchTerm = ref('');
 
-const handleInput = () => {
-  emit('search', searchText.value);
+const emit = defineEmits(['search']);
+
+const handleInput = (event) => {
+  searchTerm.value = event.target.value;
+  emit('search', searchTerm.value);
 };
 </script>
 

@@ -104,7 +104,7 @@ const totalPrice = computed(() => {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #262525; /* Dark grey background navbar background color */
+  background-color: #1E1E1E; /* Dark grey background navbar background color */
   font-size: 14px;
 }
 a {
@@ -117,6 +117,7 @@ a:hover {
 }
 .cart-button {
   background-color: #0051a8;
+  display: flex;
   margin-right: 50px;
   font-weight: 500;
 }

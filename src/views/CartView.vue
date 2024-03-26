@@ -13,37 +13,41 @@
     </h2>
     <div class="cart-container">
       <div
-        v-for="(item, index) in cart.cartItems"
+        v-for="(product, index) in cart.cartItems"
         :key="index"
         class="cart-table"
       >
         <div class="item-row">
-          <img class="cart-image" :src="item.image" alt="Product image" />
+          <img class="cart-image" :src="product.image" alt="Product image" />
           <div class="item-details">
             <router-link
-              :to="`/iphone/new/${item.name}/${item.id}`"
+              :to="`/iphone/${product.name}/${product.id}`"
               class="item-name"
-              >{{ item.name }}</router-link
+              >{{ product.name }}</router-link
             >
-            <span>{{ item.selectedMemory }} TB</span>
-            <span>{{ item.selectedColor }}</span>
+            <span v-if="product.category !== 'airpods'">{{
+              formatMemory(product.memory)
+            }}</span>
+            <span v-if="product.selectedColor">{{
+              product.selectedColor.value
+            }}</span>
             <div class="quantity-control">
               <Button
                 class="pi pi-plus"
-                @click="cart.increaseQuantity(item)"
+                @click="cart.increaseQuantity(product)"
               ></Button>
-              <span class="quantity-counter">{{ item.quantity }}</span>
-              
+              <span class="quantity-counter">{{ product.quantity }}</span>
+
               <Button
                 class="pi pi-minus"
-                @click="cart.decreaseQuantity(item)"
+                @click="cart.decreaseQuantity(product)"
               ></Button>
             </div>
             <div class="item-price-trash">
-              <p class="item-price">€{{ item.price.toFixed(2) }}</p>
+              <p class="item-price">€{{ product.price.toFixed(2) }}</p>
               <Button
                 class="pi pi-trash"
-                @click="removeFromCart(item)"
+                @click="removeFromCart(product)"
               ></Button>
             </div>
           </div>
@@ -93,21 +97,39 @@
 </template>
 
 <script setup lang="ts">
-import { computed } from "vue";
+import { computed, onMounted } from "vue";
 import { useCartStore } from "@/stores/cart";
 import NavBarComp from "@/components/NavBarComp.vue";
 import FooterComp from "@/components/FooterComp.vue";
 import { useI18n } from "vue-i18n";
+import { useRoute } from "vue-router";
 
+const route = useRoute();
 const cart = useCartStore();
+
 const { t } = useI18n();
 const totalPrice = computed(() => {
-  return cart.cartItems.reduce((total, item) => total + item.price * item.quantity, 0);
+  return cart.cartItems.reduce(
+    (total, product) => total + product.price * product.quantity,
+    0
+  );
 });
-const removeFromCart = (item) => {
-  cart.remove(item);
+const removeFromCart = (product) => {
+  cart.remove(product);
+};
+const formatMemory = (memory) => {
+  return memory === 1 ? `${memory} TB` : `${memory} GB`;
 };
 
+onMounted(async () => {
+  const id = route.params.id;
+  const response = await fetch(`http://localhost:3000/api/products/`);
+  if (!response.ok) {
+    throw new Error(`HTTP error! status: ${response.status}`);
+  }
+  const data = await response.json();
+  product.value = data;
+});
 </script>
 
 <style scoped>

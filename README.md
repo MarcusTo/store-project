@@ -20,7 +20,7 @@ Welcome to your one-stop destination for premium electronic products and service
   - Iphones 
   - Airpods 
   - Mac laptops and iMacs
-  - Accessories
+  - Apple Accessories
 
 - **Service Offerings:**
   - Repairs

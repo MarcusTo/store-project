@@ -6,7 +6,7 @@
     <p>{{ t("dummyText") }}</p>
     <p>{{ t("dummyText") }}</p>
   </div>
-  <hr>
+  <hr />
   <div class="accordion">
     <Accordion :activeIndex="activeIndex" @tabChange="onTabChange">
       <AccordionTab>
@@ -46,9 +46,48 @@
         </div>
       </AccordionTab>
     </Accordion>
+    <hr />
+    <Accordion :activeIndex="activeIndex" @tabChange="onTabChange">
+      <AccordionTab>
+        <template #headericon>
+          <p class="accordion-header">
+            <p>{{ t("repairs.exchange_broken_device") }}</p>
+          </p>
+        </template>
+        <div>
+          <p>
+            {{ t("repairs.exchange_offer") }}
+          </p>
+          <ul class="price-list">
+            <li>
+              <ul class="price-list">
+                <li>{{ t("repairs.exchange_prices.iPhone_6_6S") }}</li>
+                <li>{{ t("repairs.exchange_prices.iPhone_6Plus_6SPlus") }}</li>
+                <li>{{ t("repairs.exchange_prices.iPhone_7") }}</li>
+                <li>{{ t("repairs.exchange_prices.iPhone_7Plus") }}</li>
+                <li>{{ t("repairs.exchange_prices.iPhone_SE_2020") }}</li>
+                <li>{{ t("repairs.exchange_prices.iPhone_SE_2022") }}</li>
+                <li>{{ t("repairs.exchange_prices.iPhone_8") }}</li>
+                <li>{{ t("repairs.exchange_prices.iPhone_8Plus") }}</li>
+                <li>{{ t("repairs.exchange_prices.iPhone_XR_11_12Mini_13Mini") }}</li>
+                <li>{{ t("repairs.exchange_prices.iPhone_12_13") }}</li>
+                <li>{{ t("repairs.exchange_prices.iPhone_X_XS_11Pro_12Pro_13Pro") }}</li>
+                <li>{{ t("repairs.exchange_prices.iPhone_XSMax_11ProMax_12ProMax_14_15Plus") }}</li>
+                <li>{{ t("repairs.exchange_prices.iPhone_14_15") }}</li>
+                <li>{{ t("repairs.exchange_prices.iPhone_14Pro_15Pro") }}</li>
+                <li>{{ t("repairs.exchange_prices.iPhone_14ProMax_15ProMax") }}</li>
+                        </ul>
+            </li>
+          </ul>
+          <span>
+            <strong>{{ t("repairs.icloud_lock_message") }}</strong></span
+          >
+        </div>
+      </AccordionTab>
+    </Accordion>
   </div>
-  <hr>
-  <FooterComp></FooterComp>
+  <hr />
+  <FooterComp />
 </template>
 
 <script setup lang="ts">
@@ -70,7 +109,7 @@ const onTabChange = (e) => {
 <style scoped>
 hr {
   border: none;
-  border-top: 1px solid #ccc; 
+  border-top: 1px solid #ccc;
 }
 .header {
   font-size: 40px;
