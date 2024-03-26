@@ -7,7 +7,6 @@
     "dev": "vite",
     "main": "index.ts",
     "build": "vue-tsc && vite build",
-    "preview": "vite preview"
     "preview": "vite preview",
     "start": "npx nodemon"
   },
@@ -37,7 +36,6 @@
     "@types/node": "^20.11.26",
     "@vitejs/plugin-vue": "^4.5.2",
     "nodemon": "^3.1.0",
-    "typescript": "^5.3.3",
     "ts-node": "^10.9.2",
     "typescript": "^5.4.2",
     "vite": "^5.0.8",

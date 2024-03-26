@@ -19,7 +19,7 @@ app.get("/", (req, res) => {
 
 mongoose
   .connect(
-    "mongodb+srv://admin:o8uKkApIVMUxek1v@cluster007.hcbcpka.mongodb.net/?retryWrites=true&w=majority&appName=Cluster007"
+    "mongodb+srv://admin:admin123@cluster007.hcbcpka.mongodb.net/?retryWrites=true&w=majority&appName=Cluster007"
   )
   .then(() => {
     console.log("Connected to database!");
