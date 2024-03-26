@@ -37,7 +37,6 @@
                 @click="cart.increaseQuantity(product)"
               ></Button>
               <span class="quantity-counter">{{ product.quantity }}</span>
-              
 
               <Button
                 class="pi pi-minus"
@@ -96,6 +95,7 @@
   </div>
   <FooterComp />
 </template>
+
 <script setup lang="ts">
 import { computed, onMounted } from "vue";
 import { useCartStore } from "@/stores/cart";
@@ -103,8 +103,10 @@ import NavBarComp from "@/components/NavBarComp.vue";
 import FooterComp from "@/components/FooterComp.vue";
 import { useI18n } from "vue-i18n";
 import { useRoute } from "vue-router";
+
 const route = useRoute();
 const cart = useCartStore();
+
 const { t } = useI18n();
 const totalPrice = computed(() => {
   return cart.cartItems.reduce(
@@ -118,6 +120,7 @@ const removeFromCart = (product) => {
 const formatMemory = (memory) => {
   return memory === 1 ? `${memory} TB` : `${memory} GB`;
 };
+
 onMounted(async () => {
   const id = route.params.id;
   const response = await fetch(`http://localhost:3000/api/products/`);
@@ -140,6 +143,7 @@ onMounted(async () => {
   padding-left: 40px;
   margin-bottom: 0px;
 }
+
 .cart-table {
   display: flex;
   align-items: center;
@@ -147,10 +151,12 @@ onMounted(async () => {
   gap: 20px;
   margin-bottom: 2rem;
 }
+
 .item-row {
   display: flex;
   gap: 5px;
 }
+
 .pi-trash {
   background-color: transparent;
   color: #007bff;
@@ -166,28 +172,33 @@ onMounted(async () => {
   border: none;
   margin-right: auto;
 }
+
 .pi-minus {
   background-color: transparent;
   color: #007bff;
   border: none;
   width: 0%;
 }
+
 .item-details {
   display: flex;
   flex-direction: column;
   align-items: flex-start; /* Align items to the left */
 }
+
 .item-name {
   display: flex;
   font-size: 22px;
   font-weight: 500;
 }
+
 .item-price {
   display: flex;
   align-items: right;
   font-size: 22px;
   font-weight: 500;
   margin-top: -100px;
+
   justify-content: flex-end;
 }
 .item-price-trash {
@@ -195,14 +206,17 @@ onMounted(async () => {
   flex-direction: column;
   align-items: flex-end;
 }
+
 .cart-image {
   width: 102px;
   height: 102px;
 }
+
 .product-card {
   width: 172px;
   margin-bottom: 10px;
 }
+
 .button-container {
   display: flex;
   justify-content: center;
@@ -212,10 +226,12 @@ onMounted(async () => {
   gap: 10px;
   flex-direction: column;
 }
+
 .empty-cart {
   display: flex;
   justify-content: center;
 }
+
 .router-link {
   display: inline-block;
   margin-top: 10px;

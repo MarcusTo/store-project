@@ -1,5 +1,6 @@
 import { ROUTE_PATHS } from "@/router/paths";
 import type { RouteRecordRaw } from "vue-router";
+
 const routes: Array<RouteRecordRaw> = [
   {
     path: ROUTE_PATHS.HOME,

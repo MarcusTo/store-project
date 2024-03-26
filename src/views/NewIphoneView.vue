@@ -60,6 +60,7 @@
   </div>
   <FooterComp />
 </template>
+
 <script setup lang="ts">
 import { ref, onMounted } from "vue";
 import Button from "primevue/button";
@@ -68,12 +69,18 @@ import FooterComp from "@/components/FooterComp.vue";
 import { useI18n } from "vue-i18n";
 import { useCartStore } from "@/stores/cart";
 import { useRoute, useRouter } from "vue-router";
+
 const { t } = useI18n();
 const router = useRouter();
+
 const cart = useCartStore();
+
 const product = ref(null);
+
 const selectedMemory = ref({ value: null });
+
 const selectedColor = ref({ value: null });
+
 const addToCart = () => {
   const cartItem = {
     ...product.value,
@@ -86,7 +93,9 @@ const addToCart = () => {
 const formatMemory = (memory) => {
   return memory === 1 ? `${memory} TB` : `${memory} GB`;
 };
+
 const route = useRoute();
+
 onMounted(async () => {
   const id = route.params.id;
   const response = await fetch(`http://localhost:3000/api/products/${id}`);
@@ -98,6 +107,7 @@ onMounted(async () => {
   console.log(product.value); // Add this line
 });
 </script>
+
 <style scoped>
 .product-card {
   display: flex;
@@ -173,9 +183,11 @@ onMounted(async () => {
   border-radius: 16px;
   transition: background-color 0.3s ease;
 }
+
 .button:active {
   transform: none;
 }
+
 .button:hover {
   background-color: #0056b3;
 }

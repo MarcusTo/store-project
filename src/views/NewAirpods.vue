@@ -37,10 +37,14 @@ import FooterComp from "@/components/FooterComp.vue";
 import { useI18n } from "vue-i18n";
 import { useCartStore } from "@/stores/cart";
 import { useRoute, useRouter } from "vue-router";
+
 const { t } = useI18n();
 const router = useRouter();
+
 const cart = useCartStore();
+
 const product = ref(null);
+
 const addToCart = () => {
   const cartItem = {
     ...product.value,
@@ -49,7 +53,9 @@ const addToCart = () => {
   cart.addToCart(cartItem);
   router.push("/CartView");
 };
+
 const route = useRoute();
+
 onMounted(async () => {
   const id = route.params.id; // Get the id from the route parameters
   const response = await fetch(`http://localhost:3000/api/products/${id}`);
@@ -60,6 +66,7 @@ onMounted(async () => {
   product.value = data;
   });
 </script>
+
 <style scoped>
 .product-card {
   display: flex;
@@ -67,12 +74,15 @@ onMounted(async () => {
   gap: 10rem;
   width: 65%;
 }
+
 .transparent {
   opacity: 0.5;
 }
+
 .product-details {
   margin-left: 60px;
 }
+
 .membutton {
   margin-right: 2px;
   height: 36px;
@@ -87,6 +97,7 @@ onMounted(async () => {
   cursor: pointer;
   margin-bottom: 10px;
 }
+
 .product-grid {
   display: block;
   width: 90%; /* Adjust the width as needed */
@@ -96,10 +107,12 @@ onMounted(async () => {
   border-radius: 10px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 }
+
 .product-image {
   width: 468.5px;
   height: 446.637px;
 }
+
 .button {
   display: relative;
   justify-content: center;
@@ -114,6 +127,7 @@ onMounted(async () => {
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
+
 .button:hover {
   background-color: #0056b3;
 }

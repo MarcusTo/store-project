@@ -89,6 +89,7 @@
   <hr />
   <FooterComp />
 </template>
+
 <script setup lang="ts">
 import { ref } from "vue";
 import NavBarComp from "@/components/NavBarComp.vue";
@@ -96,12 +97,15 @@ import Accordion from "primevue/accordion";
 import AccordionTab from "primevue/accordiontab";
 import FooterComp from "@/components/FooterComp.vue";
 import { useI18n } from "vue-i18n";
+
 const { t } = useI18n();
 let activeIndex = ref(null);
+
 const onTabChange = (e) => {
   activeIndex.value = e.index;
 };
 </script>
+
 <style scoped>
 hr {
   border: none;

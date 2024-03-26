@@ -60,6 +60,7 @@
   </div>
   <FooterComp />
 </template>
+
 <script setup lang="ts">
 import { ref, onMounted } from "vue";
 import RadioButton from "primevue/radiobutton";
@@ -67,6 +68,7 @@ import NavBarComp from "@/components/NavBarComp.vue";
 import FooterComp from "@/components/FooterComp.vue";
 import { useRoute } from "vue-router";
 import { useI18n } from "vue-i18n";
+
 const { t } = useI18n();
 const route = useRoute();
 const product = ref(null);
@@ -82,6 +84,7 @@ onMounted(() => {
   product.value = sampleProducts.find((p) => p.id === productId);
 });
 </script>
+
 <style scoped>
 .product-grid {
   display: inline-block;

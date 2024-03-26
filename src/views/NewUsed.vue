@@ -58,10 +58,13 @@ import NavBarComp from "@/components/NavBarComp.vue";
 import FooterComp from "@/components/FooterComp.vue";
 import { useRoute } from "vue-router";
 import { useI18n } from "vue-i18n";
+
 const route = useRoute();
 const { t } = useI18n();
+
 const productId = route.params._id; 
 const product = ref(null); 
+
 onMounted(async () => {
   try {
     const response = await fetch(`http://localhost:8080/getProduct/${productId}`);
@@ -74,6 +77,7 @@ onMounted(async () => {
     console.error("Error:", error);
   }
 });
+
 </script> -->
 <!-- 
 <!-- <style scoped>
@@ -98,6 +102,7 @@ onMounted(async () => {
   flex-direction: column;
   align-items: center;
 }
+
 .button {
   display: inline-block;
   padding: 0px 50px;
@@ -111,6 +116,7 @@ onMounted(async () => {
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
+
 .button:hover {
   background-color: #0056b3;
 } -->

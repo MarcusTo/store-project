@@ -3,7 +3,7 @@ export enum ROUTE_PATHS {
   
   PRODUCTS = "/products",
   PRODUCT_DETAILS = "/products/:id",
-
+  
   IPHONE = "/iphone", 
   NEW_IPHONE="/iphone/:id",
   // NEW_USED_IPHONE= "/iphone/new-or-used/:productName/:_id",
@@ -17,7 +17,7 @@ export enum ROUTE_PATHS {
   NEW_MAC="/mac/new/:productName/:productId",
   // NEW_USED_MAC= "/mac/new-or-used/:productName/:productId",
   // USED_MAC="/mac/used/:productName/:productId",
-
+  
   SERVICES = "/services",
   CART = "/cartView",
   TO_CART= "/added-to-cart",
@@ -25,8 +25,10 @@ export enum ROUTE_PATHS {
   LOGIN = "/login",
   REGISTER = "/register",
   ORDERS = "/orders",
+
   
   ABOUT = "/about",
   CONTACT = "/contact",
 }
+
 export default { ROUTE_PATHS };
