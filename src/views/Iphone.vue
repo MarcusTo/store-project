@@ -34,7 +34,7 @@ import NavBarComp from "@/components/NavBarComp.vue";
 import FooterComp from "@/components/FooterComp.vue";
 import SearchComp from "@/components/SearchComp.vue";
 import { useI18n } from "vue-i18n";
-const { t } = useI18n(); 
+const { t } = useI18n();
 interface Product {
   _id: string;
   name: string;
@@ -46,7 +46,7 @@ onMounted(async () => {
   try {
     const response = await fetch("http://localhost:8080/getProducts");
     const data = await response.json();
-    products.value = data.filter(product => product.category === 'iphone');
+    products.value = data.filter((product: { category: string; }) => product.category === 'iphone');
   } catch (error) {
     console.error("Error:", error);
   }
