@@ -25,8 +25,12 @@
               class="item-name"
               >{{ product.name }}</router-link
             >
-            <span>{{ product.selectedMemory }} </span>
-            <span>{{ product.selectedColor }}</span>
+            <span v-if="product.category !== 'airpods'">{{
+              formatMemory(product.memory)
+            }}</span>
+            <span v-if="product.category !== 'airpods'">{{
+              product.color
+            }}</span>
             <div class="quantity-control">
               <Button
                 class="pi pi-plus"
@@ -34,6 +38,7 @@
               ></Button>
               <span class="quantity-counter">{{ product.quantity }}</span>
               
+
               <Button
                 class="pi pi-minus"
                 @click="cart.decreaseQuantity(product)"
@@ -102,10 +107,16 @@ const route = useRoute();
 const cart = useCartStore();
 const { t } = useI18n();
 const totalPrice = computed(() => {
-  return cart.cartItems.reduce((total, product) => total + product.price * product.quantity, 0);
+  return cart.cartItems.reduce(
+    (total, product) => total + product.price * product.quantity,
+    0
+  );
 });
 const removeFromCart = (product) => {
   cart.remove(product);
+};
+const formatMemory = (memory) => {
+  return memory === 1 ? `${memory} TB` : `${memory} GB`;
 };
 onMounted(async () => {
   const id = route.params.id; // Get the id from the route parameters
@@ -115,8 +126,9 @@ onMounted(async () => {
   }
   const data = await response.json();
   product.value = data;
-  });
+});
 </script>
+
 <style scoped>
 .cart-container {
   min-width: 320px;

@@ -1,6 +1,6 @@
 <template>
   <NavBarComp />
-  <h2>
+  <h2
     style="
       display: flex;
       justify-content: center;
@@ -9,22 +9,42 @@
       margin-top: 30px;
       margin-bottom: 30px;
     "
-  {{ product && product.name }}
-</h2>
+  >
+    {{ product && product.name }}
+  </h2>
   <div class="product-grid">
     <div class="product-card" v-if="product" :key="product._id">
       <img :src="product.image" alt="Product Image" class="product-image" />
       <div class="product-details">
         <div class="form">
-          <button>
-          </button>
-          <div v-for="color in product.colors" :key="color">
-            <label :for="color">{{ color }}</label>
+          <p style="font-size: 13px; font-weight: 500">VALI MÄLUMAHT</p>
+          <div class="memory">
+            <Button
+              class="mem-button"
+              :class="{
+                'mem-button-selected':
+                  selectedMemory && selectedMemory.value === product.memory,
+              }"
+              style="align-items: center; white-space: nowrap"
+              @click="selectedMemory.value = product.memory"
+            >
+              {{ formatMemory(product.memory) }}
+            </Button>
+          </div>
+          <p style="font-size: 13px; font-weight: 500">VALI VÄRV</p>
+          <div class="color">
+            <RadioButton>
+              {{ product.color }}
+            </RadioButton>
           </div>
         </div>
-        <p style="font-weight: 500; font-size: 40px">€ {{ product.price.toFixed(2) }}</p>
+        <p style="font-weight: 500; font-size: 40px">
+          € {{ product.price.toFixed(2) }}
+        </p>
         <Button class="button" @click="addToCart(product)">
-          <p style="position: absolute; transform: none;">{{ t("cart.addToCart") }}</p>
+          <p style="position: absolute; transform: none">
+            {{ t("cart.addToCart") }}
+          </p>
         </Button>
       </div>
     </div>
@@ -36,6 +56,7 @@ import { ref, onMounted } from "vue";
 import Button from "primevue/button";
 import NavBarComp from "@/components/NavBarComp.vue";
 import FooterComp from "@/components/FooterComp.vue";
+import RadioButton from "primevue/radiobutton";
 import { useI18n } from "vue-i18n";
 import { useCartStore } from "@/stores/cart";
 import { useRoute, useRouter } from "vue-router";
@@ -43,27 +64,28 @@ const { t } = useI18n();
 const router = useRouter();
 const cart = useCartStore();
 const product = ref(null);
+const selectedMemory = ref({ value: null });
 const addToCart = () => {
   const cartItem = {
     ...product.value,
-    id: product.value._id, // Add the product id to the cart item
+    id: product.value._id,
   };
   cart.addToCart(cartItem);
   router.push("/CartView");
 };
-const selectedColor = ref(null);
-const selectMemory = (memory) => {
-}
+const formatMemory = (memory) => {
+  return memory === 1 ? `${memory} TB` : `${memory} GB`;
+};
 const route = useRoute();
-onMounted(async () => {
-  const id = route.params.id; // Get the id from the route parameters
+onMounted(async () => { 
+  const id = route.params.id;
   const response = await fetch(`http://localhost:3000/api/products/${id}`);
   if (!response.ok) {
     throw new Error(`HTTP error! status: ${response.status}`);
   }
   const data = await response.json();
   product.value = data;
-  });
+});
 </script>
 <style scoped>
 .product-card {
@@ -78,19 +100,21 @@ onMounted(async () => {
 .product-details {
   margin-left: 60px;
 }
-.membutton {
+.mem-button {
   margin-right: 2px;
   height: 36px;
-  background-color: #0066cc;
-  border: 2px solid #0066cc;
+  background-color: #E5F2FF(210, 210, 210);
+  border: 2px solid ;
   color: #ffffff;
   font-size: 13px;
   font-weight: 600;
   border-radius: 12px;
   padding-left: 14px;
   padding-right: 14px;
-  cursor: pointer;
   margin-bottom: 10px;
+}
+.mem-button-selected {
+  background-color: #0066cc;
 }
 .product-grid {
   display: block;
