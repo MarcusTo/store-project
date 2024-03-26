@@ -29,7 +29,7 @@
       </p>
       <router-link
         style="color: #0051a8"
-        :to="`/airpods/${product.name}/${product._id}`"
+        :to="`/airpods/${product._id}`"
       >
         {{ t("products.buy") }} €{{ product.price }}
       </router-link>

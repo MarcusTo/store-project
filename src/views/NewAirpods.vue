@@ -1,25 +1,22 @@
 <template>
   <NavBarComp />
-  <h2
+  <h2>
     style="
       display: flex;
       justify-content: center;
       align-items: center;
       font-size: 32px;
     "
-  >
   </h2>
   <div class="product-grid">
-    <div class="product-card" v-if="product">
+    <div class="product-card" v-if="product" :key="product._id">
       <img :src="product.image" alt="Product Image" class="product-image" />
       <div class="product-details">
         <div class="form">
           <p>{{ product.description }}</p>
         </div>
-        <p style="font-weight: 500; font-size: 40px">
-          € {{ product.price }}
-        </p>
-        <Button class="button" @click="addToCart">
+        <p style="font-weight: 500; font-size: 40px">€ {{ product.price }}</p>
+        <Button class="button" @click="addToCart(product)">
           {{ t("cart.addToCart") }}
         </Button>
       </div>
@@ -34,48 +31,30 @@ import NavBarComp from "@/components/NavBarComp.vue";
 import FooterComp from "@/components/FooterComp.vue";
 import { useI18n } from "vue-i18n";
 import { useCartStore } from "@/stores/cart";
-import { useRouter } from "vue-router";
-
+import { useRoute, useRouter } from "vue-router";
 const { t } = useI18n();
 const router = useRouter();
-
 const cart = useCartStore();
-const selectedColor = ref(null);
-const selectedMemory = ref(null);
-interface Product {
-  _id: string;
-  name: string;
-  description: string;
-  image: string;
-  price: number; 
-}
-const product = ref<Product[]>([]); 
+const product = ref(null);
 const addToCart = () => {
   const cartItem = {
-    ...product.value,
-    selectedColor: selectedColor.value,
-    selectedMemory: selectedMemory.value,
+    ...[product.value],
   };
   cart.addToCart(cartItem);
   router.push("/CartView");
 };
-
+const route = useRoute();
 onMounted(async () => {
-  try {
-    const category = "airpods";
-    const url = `http://localhost:8080/getProduct?category=${category}`;
-    console.log("Fetch URL:", url); // Log the fetch URL
-    const response = await fetch(url);
-    if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
-    }
-    const data = await response.json();
-    product.value = data; 
-  } catch (error) {
-    console.error("Error:", error);
+  const id = route.params.id; // Get the id from the route parameters
+  const response = await fetch(`http://localhost:3000/api/products/${id}`);
+  if (!response.ok) {
+    throw new Error(`HTTP error! status: ${response.status}`);
   }
 });
+  const data = await response.json();
+  product.value = data;
 </script>
+
 <style scoped>
 .product-card {
   display: flex;

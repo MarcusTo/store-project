@@ -10,8 +10,8 @@ export enum ROUTE_PATHS {
   USED_IPHONE="/iphone/used/:productName/:productId",
 
   AIRPODS = "/airpods",
-  NEW_USED_AIRPODS= "/airpods/:productName/:_id",
-  NEW_AIRPODS="/airpods/:name/:productId",
+  NEW_USED_AIRPODS= "/airpods/:productName/:id",
+  NEW_AIRPODS="/airpods/:id",
 
   MAC = "/mac",
   NEW_USED_MAC= "/mac/new-or-used/:productName/:productId",
