@@ -10,10 +10,10 @@
   >
     {{ t("products.airpods") }}
   </h2>
-  <SearchComp />
+  <SearchComp @search="handleSearch" />
   <hr />
   <div class="product-cards">
-    <div v-for="product in products" :key="product._id" class="product-card">
+    <div v-for="product in filteredProducts" :key="product._id" class="product-card">
       <img :src="product.image" style="width: 200px; height: 200px" />
       <p
         style="
@@ -31,20 +31,29 @@
         style="color: #0051a8"
         :to="`/airpods/${product._id}`"
       >
-        {{ t("products.buy") }} €{{ product.price }}
+        {{ t("products.buy") }} €{{ product.price.toFixed(2) }}
       </router-link>
     </div>
   </div>
   <FooterComp />
 </template>
+
 <script setup lang="ts">
-import { ref, onMounted } from "vue";
+import { ref, onMounted, computed } from "vue";
 import NavBarComp from "@/components/NavBarComp.vue";
 import FooterComp from "@/components/FooterComp.vue";
 import SearchComp from "@/components/SearchComp.vue";
 import { useI18n } from "vue-i18n";
 const { t } = useI18n();
-const products = ref([]);
+interface Product {
+  _id: string;
+  name: string;
+  image: string;
+  price: number; 
+}
+const products = ref<Product[]>([]);
+const searchTerm = ref('');
+const emit = defineEmits(['search']);
 onMounted(async () => {
   try {
     const response = await fetch('http://localhost:3000/api/products');
@@ -54,7 +63,16 @@ onMounted(async () => {
     console.error('Error:', error);
   }
 });
+const handleSearch = (value) => {
+  searchTerm.value = value;
+};
+const filteredProducts = computed(() => {
+  return products.value.filter(product =>
+    product.name.toLowerCase().includes(searchTerm.value.toLowerCase())
+  );
+});
 </script>
+
 <style scoped>
 .product-cards {
   display: grid;

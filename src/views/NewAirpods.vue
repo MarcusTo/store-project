@@ -1,6 +1,6 @@
 <template>
   <NavBarComp />
-  <h2>
+  <h2
   style="
     display: flex;
     justify-content: center;
@@ -9,7 +9,7 @@
     margin-top: 30px;
     margin-bottom: 30px;
   "
-</h2>
+>
   {{ product && product.name }}
 </h2>
   <div class="product-grid">
@@ -28,8 +28,9 @@
   </div>
   <FooterComp />
 </template>
+
 <script setup lang="ts">
-import { ref, onMounted } from "vue";
+import { ref, onMounted, computed, defineEmits } from 'vue';
 import Button from "primevue/button";
 import NavBarComp from "@/components/NavBarComp.vue";
 import FooterComp from "@/components/FooterComp.vue";
