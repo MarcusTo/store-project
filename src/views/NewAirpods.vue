@@ -56,7 +56,7 @@ const products = ref([]);
 onMounted(async () => {
   try {
     const category = "airpods";
-    const url = `http://localhost:8080/getProducts`;
+    const url = `http://localhost:8080/getProducts?category=${category}`; //
     console.log("Fetch URL:", url); // Log the fetch URL
     const response = await fetch(url);
     if (!response.ok) {
