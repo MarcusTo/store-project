@@ -33,7 +33,7 @@
                 @click="cart.increaseQuantity(product)"
               ></Button>
               <span class="quantity-counter">{{ product.quantity }}</span>
-
+              
               <Button
                 class="pi pi-minus"
                 @click="cart.decreaseQuantity(product)"
@@ -91,7 +91,6 @@
   </div>
   <FooterComp />
 </template>
-
 <script setup lang="ts">
 import { computed, onMounted } from "vue";
 import { useCartStore } from "@/stores/cart";
@@ -105,20 +104,19 @@ const { t } = useI18n();
 const totalPrice = computed(() => {
   return cart.cartItems.reduce((total, product) => total + product.price * product.quantity, 0);
 });
-const removeFromCart = (item) => {
-  cart.remove(item);
+const removeFromCart = (product) => {
+  cart.remove(product);
 };
 onMounted(async () => {
   const id = route.params.id; // Get the id from the route parameters
-  const response = await fetch(`http://localhost:3000/api/products/${id}`);
+  const response = await fetch(`http://localhost:3000/api/products/`);
   if (!response.ok) {
     throw new Error(`HTTP error! status: ${response.status}`);
   }
-  const removeFromCart = (product) => {
-  cart.remove(product);
+  const data = await response.json();
+  product.value = data;
   });
 </script>
-
 <style scoped>
 .cart-container {
   min-width: 320px;

@@ -8,7 +8,7 @@
       font-size: 32px;
     "
   >
-    {{ t("products.iphone") }}
+  {{ t("products.buy") }} €{{ product.price.toFixed(2) }}
   </h2>
   <SearchComp @search="handleSearch" />
   <hr />
@@ -60,7 +60,6 @@ const handleSearch = () => {};
   justify-content: center;
   grid-template-columns: repeat(4, 1fr);
   gap: 10rem;
-  margin-bottom: 20px;
   margin-top: 40px;
 }
 .product-card {

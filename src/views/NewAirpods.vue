@@ -42,7 +42,8 @@ const cart = useCartStore();
 const product = ref(null);
 const addToCart = () => {
   const cartItem = {
-    ...[product.value],
+    ...product.value,
+    id: product.value._id, // Add the product id to the cart item
   };
   cart.addToCart(cartItem);
   router.push("/CartView");

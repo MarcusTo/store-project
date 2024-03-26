@@ -48,7 +48,8 @@ const cart = useCartStore();
 const product = ref(null);
 const addToCart = () => {
   const cartItem = {
-    ...[product.value],
+    ...product.value,
+    id: product.value._id, // Add the product id to the cart item
   };
   cart.addToCart(cartItem);
   router.push("/CartView");
@@ -100,7 +101,7 @@ onMounted(async () => {
   margin: auto; /* Center the grid */
   padding: 10px 0px;
   background-color: #ffffff;
-  border-radius: 10px;
+  border-radius: 12px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
   .product-image {
     width: 468.5px;
