@@ -117,6 +117,7 @@ a:hover {
 }
 .cart-button {
   background-color: #0051a8;
+  display: flex;
   margin-right: 50px;
   font-weight: 500;
 }

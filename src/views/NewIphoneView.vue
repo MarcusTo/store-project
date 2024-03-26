@@ -1,15 +1,14 @@
 <template>
   <NavBarComp />
-  <h2
-  style="
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 32px;
-    margin-top: 30px;
-    margin-bottom: 30px;
-  "
->
+  <h2>
+    style="
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 32px;
+      margin-top: 30px;
+      margin-bottom: 30px;
+    "
   {{ product && product.name }}
 </h2>
   <div class="product-grid">
@@ -17,11 +16,9 @@
       <img :src="product.image" alt="Product Image" class="product-image" />
       <div class="product-details">
         <div class="form">
-          <button v-for="memory in product.memorySizes" :key="memory" @click="selectMemory(memory)">
-            {{ memory }}
+          <button>
           </button>
           <div v-for="color in product.colors" :key="color">
-            <input type="radio" :value="color" v-model="selectedColor" :id="color" />
             <label :for="color">{{ color }}</label>
           </div>
         </div>
