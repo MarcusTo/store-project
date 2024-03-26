@@ -27,7 +27,7 @@
         </div>
         <p style="font-weight: 500; font-size: 40px">€ {{ product.price.toFixed(2) }}</p>
         <Button class="button" @click="addToCart(product)">
-          {{ t("cart.addToCart") }}
+          <p style="position: absolute; transform: none;">{{ t("cart.addToCart") }}</p>
         </Button>
       </div>
     </div>
@@ -119,8 +119,10 @@ onMounted(async () => {
   color: #fff;
   background-color: #007bff;
   border-radius: 16px;
-  cursor: pointer;
   transition: background-color 0.3s ease;
+}
+.button:active {
+  transform: none;
 }
 .button:hover {
   background-color: #0056b3;

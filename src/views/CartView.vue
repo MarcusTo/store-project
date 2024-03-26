@@ -25,7 +25,7 @@
               class="item-name"
               >{{ product.name }}</router-link
             >
-            <span>{{ product.selectedMemory }} TB</span>
+            <span>{{ product.selectedMemory }} </span>
             <span>{{ product.selectedColor }}</span>
             <div class="quantity-control">
               <Button
@@ -40,7 +40,7 @@
               ></Button>
             </div>
             <div class="item-price-trash">
-              <p class="item-price">€{{ product.price }}</p>
+              <p class="item-price">€{{ product.price.toFixed(2) }}</p>
               <Button
                 class="pi pi-trash"
                 @click="removeFromCart(product)"
@@ -61,7 +61,7 @@
             font-weight: 500;
           "
         >
-          Kokku: {{ totalPrice }} €
+          Kokku: {{ totalPrice.toFixed(2) }} €
         </h2>
         <div class="button-container">
           <router-link :to="`/checkout`">
