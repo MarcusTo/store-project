@@ -8,17 +8,16 @@
       font-size: 32px;
     "
   >
-    {{ product?.name }}
   </h2>
   <div class="product-grid">
-    <div v-for="product in products" :key="product._id" class="product-card">
+    <div class="product-card" v-if="product">
       <img :src="product.image" alt="Product Image" class="product-image" />
       <div class="product-details">
         <div class="form">
-            <p>{{ product.description }}</p>
+          <p>{{ product.description }}</p>
         </div>
         <p style="font-weight: 500; font-size: 40px">
-         £ {{ product.price.toFixed(2) }}
+          € {{ product.price.toFixed(2) }}
         </p>
         <Button class="button" @click="addToCart">
           {{ t("cart.addToCart") }}
@@ -33,16 +32,24 @@ import { ref, onMounted } from "vue";
 import Button from "primevue/button";
 import NavBarComp from "@/components/NavBarComp.vue";
 import FooterComp from "@/components/FooterComp.vue";
-import { useRoute } from "vue-router";
 import { useI18n } from "vue-i18n";
 import { useCartStore } from "@/stores/cart";
 import { useRouter } from "vue-router";
+
 const { t } = useI18n();
-const route = useRoute();
 const router = useRouter();
+
+const cart = useCartStore();
 const selectedColor = ref(null);
 const selectedMemory = ref(null);
-const cart = useCartStore();
+interface Product {
+  _id: string;
+  name: string;
+  description: string;
+  image: string;
+  price: number; 
+}
+const product = ref<Product[]>([]); 
 const addToCart = () => {
   const cartItem = {
     ...product.value,
@@ -52,18 +59,18 @@ const addToCart = () => {
   cart.addToCart(cartItem);
   router.push("/CartView");
 };
-const products = ref([]);
+
 onMounted(async () => {
   try {
     const category = "airpods";
-    const url = `http://localhost:8080/getProducts?category=${category}`; //
+    const url = `http://localhost:8080/getProduct?category=${category}`;
     console.log("Fetch URL:", url); // Log the fetch URL
     const response = await fetch(url);
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
     }
     const data = await response.json();
-    products.value = data;
+    product.value = data; 
   } catch (error) {
     console.error("Error:", error);
   }
@@ -104,10 +111,10 @@ onMounted(async () => {
   background-color: #ffffff;
   border-radius: 10px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-  .product-image {
-    width: 468.5px;
-    height: 446.637px;
-  }
+}
+.product-image {
+  width: 468.5px;
+  height: 446.637px;
 }
 .button {
   display: flex;

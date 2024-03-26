@@ -28,20 +28,25 @@
   </div>
   <FooterComp />
 </template>
-
 <script setup lang="ts">
 import { ref, onMounted } from 'vue';
 import NavBarComp from "@/components/NavBarComp.vue";
 import FooterComp from "@/components/FooterComp.vue";
 import SearchComp from "@/components/SearchComp.vue";
 import { useI18n } from "vue-i18n";
-const { t } = useI18n();
-const products = ref([]); 
+const { t } = useI18n(); 
+interface Product {
+  _id: string;
+  name: string;
+  image: string;
+  price: number; 
+}
+const products = ref<Product[]>([]); // Update the type of 'products' ref
 onMounted(async () => {
   try {
     const response = await fetch("http://localhost:8080/getProducts");
     const data = await response.json();
-    products.value = data.filter(product => product.category === 'iphone'); // Filter products by category
+    products.value = data.filter(product => product.category === 'iphone');
   } catch (error) {
     console.error("Error:", error);
   }
