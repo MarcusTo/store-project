@@ -20,7 +20,7 @@
       </p>
       <router-link
         style="color: #0051a8"
-        :to="`/iphone/new-or-used/${product.name}/${product._id}`"
+        :to="`/iphone/${product._id}`"
       >
         {{ t("products.buy") }} €{{ product.price }}
       </router-link>

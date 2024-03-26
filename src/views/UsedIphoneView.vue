@@ -1,15 +1,7 @@
-<template>
-  <div>
-    <NavBarComp />
+<!-- <template>
   <NavBarComp />
   <div class="product-grid">
     <div v-if="product" class="product-card">
-      <router-link
-        style="color: #0051a8"
-        :to="`/iphone/new/${product.name}/${product.id}`"
-      >
-        {{ t("products.buy") }} €{{ product.price }}
-      </router-link>
       <img :src="product.image" alt="Product Image" class="product-image" />
       <div class="product-details">
         <div class="form">
@@ -65,18 +57,15 @@
         </router-link>
       </div>
     </div>
-    <FooterComp />
   </div>
   <FooterComp />
 </template>
-
 <script setup lang="ts">
 import { ref, onMounted } from "vue";
 import RadioButton from "primevue/radiobutton";
 import NavBarComp from "@/components/NavBarComp.vue";
 import FooterComp from "@/components/FooterComp.vue";
 import { useRoute } from "vue-router";
-import { sampleProducts } from "@/data.ts";
 import { useI18n } from "vue-i18n";
 const { t } = useI18n();
 const route = useRoute();
@@ -93,8 +82,6 @@ onMounted(() => {
   product.value = sampleProducts.find((p) => p.id === productId);
 });
 </script>
-
-<style scoped></style>
 <style scoped>
 .product-grid {
   display: inline-block;
@@ -163,4 +150,4 @@ onMounted(() => {
 .button:hover {
   background-color: #0056b3;
 }
-</style>
+</style> -->

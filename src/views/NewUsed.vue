@@ -1,97 +1,117 @@
-<h2
-style="
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 32px;
-"
->
-{{ product?.name }}
-</h2>
-<hr />
-<div class="new-or-used" v-if="product">
-<div class="product-option">
-  <img
-    :src="product.image"
-    alt="Product Image"
+<template>
+  <!-- <NavBarComp />
+  <h2
     style="
-      width: 210px;
-      height: 210px;
-      object-fit: cover;
-      margin-bottom: 5px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 32px;
     "
-  />
-  <p style="font-size: 20px; font-weight: 500;">{{ t("products.new") }} {{ product.name }}</p>
-  <p style="font-size: 20px; font-weight: 500;">{{ t("products.used") }} {{ product.name }}</p>
-  <router-link
-    class="button"
-    :to="`/iphone/new/${product.name}/${product.id}`"
-    :to="`/iphone/used/${product.name}/${product.id}`"
   >
-    <p>{{ t("products.buy") }} €{{ product.price }} ></p>
-  </router-link>
-@@ -42,11 +42,10 @@
-      margin-bottom: 5px;
-    "
-  />
-  <p style="font-size: 20px; font-weight: 500;">{{ t("products.used") }} {{ product.name }}</p>
-  <p style="font-size: 20px; font-weight: 500;">{{ t("products.new") }} {{ product.name }}</p>
-  <router-link
-    class="button"
-    :to="`/iphone/used/${product.id}/${product.id}`"
-  >
-    :to="`/iphone/new/${product.name}/${product.id}`"      >
-    <p>{{ t("products.buy") }} €{{ product.price }} ></p>
-  </router-link>
-</div>
-</div>
-<hr />
-<FooterComp />
+    {{ product?.name }}
+  </h2>
+  <div class="new-or-used" v-if="product">
+    <div class="product-option">
+      <imgč
+        :src="product.image"
+        alt="Product Image"
+        style="
+          width: 210px;
+          height: 210px;
+          object-fit: cover;
+          margin-bottom: 5px;
+        "
+      />
+      <p style="font-size: 20px; font-weight: 500;">{{ t("products.used") }} {{ product.name }}</p>
+      <router-link
+        class="button"
+        :to="`/iphone/used/${product.name}/${product._id}`"
+      >
+        <p>{{ t("products.buy") }} €{{ product.price }} ></p>
+      </router-link>
+    </div>
+    <div class="product-option">
+      <img
+        :src="product.image"
+        alt="Product Image"
+        style="
+          width: 210px;
+          height: 210px;
+          object-fit: cover;
+          margin-bottom: 5px;
+        "
+      />
+      <p style="font-size: 20px; font-weight: 500;">{{ t("products.new") }} {{ product.name }}</p>
+      <router-link
+        class="button"
+        :to="`/iphone/new/${product._id}`"      >
+        <p>{{ t("products.buy") }} €{{ product.price }}</p>
+      </router-link>
+    </div>
+  </div>
+  <FooterComp /> -->
 </template>
-<script setup lang="ts">
+
+<!-- <script setup lang="ts">
 import { ref, onMounted } from "vue";
 import NavBarComp from "@/components/NavBarComp.vue";
 import FooterComp from "@/components/FooterComp.vue";
 import { useRoute } from "vue-router";
-import { sampleProducts } from "@/data.ts";
 import { useI18n } from "vue-i18n";
 const route = useRoute();
 const { t } = useI18n();
-const product = ref(null);
-onMounted(() => {
-const productId = Number(route.params.productId);
-product.value = sampleProducts.find((p) => p.id === productId);
+const productId = route.params._id; 
+const product = ref(null); 
+onMounted(async () => {
+  try {
+    const response = await fetch(`http://localhost:8080/getProduct/${productId}`);
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    const data = await response.json();
+    product.value = data; // Set the product data
+  } catch (error) {
+    console.error("Error:", error);
+  }
 });
-</script>
-<style scoped>
+</script> -->
+<!-- 
+<!-- <style scoped>
 .new-or-used {
-margin-top: 1rem;
-margin-bottom: 3rem;
-display: flex;
-gap: 10rem;
-justify-content: center;
-align-items: center;
-text-align: center;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  display: flex;
+  gap: 10rem;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 80%; /* Adjust the width as needed */
+  margin: auto; /* Center the grid */
+  padding: 20px 0px;
+  background-color: #ffffff; 
+  width: 92%;
+  border-radius: 10px; 
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); 
 }
 .product-option {
-display: flex;
-flex-direction: column;
-align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .button {
-display: inline-block;
-padding: 0px 50px;
-font-size: 16px;
-text-align: center;
-text-decoration: none;
-color: #fff;
-background-color: #007bff;
-border: none;
-border-radius: 16px;
-cursor: pointer;
-transition: background-color 0.3s ease;
+  display: inline-block;
+  padding: 0px 50px;
+  font-size: 16px;
+  text-align: center;
+  text-decoration: none;
+  color: #fff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 .button:hover {
-background-color: #0056b3;
-}
-</style>
+  background-color: #0056b3;
+} -->
+<!-- </style> --> 

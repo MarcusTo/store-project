@@ -40,7 +40,7 @@
               ></Button>
             </div>
             <div class="item-price-trash">
-              <p class="item-price">€{{ item.price.toFixed(2) }}</p>
+              <p class="item-price">€{{ item.price }}</p>
               <Button
                 class="pi pi-trash"
                 @click="removeFromCart(item)"
@@ -61,7 +61,7 @@
             font-weight: 500;
           "
         >
-          Kokku: {{ totalPrice.toFixed(2) }} €
+          Kokku: {{ totalPrice }} €
         </h2>
         <div class="button-container">
           <router-link :to="`/checkout`">
@@ -93,12 +93,13 @@
 </template>
 
 <script setup lang="ts">
-import { computed } from "vue";
+import { computed, onMounted } from "vue";
 import { useCartStore } from "@/stores/cart";
 import NavBarComp from "@/components/NavBarComp.vue";
 import FooterComp from "@/components/FooterComp.vue";
 import { useI18n } from "vue-i18n";
-
+import { useRoute } from "vue-router";
+const route = useRoute();
 const cart = useCartStore();
 const { t } = useI18n();
 const totalPrice = computed(() => {
@@ -107,7 +108,15 @@ const totalPrice = computed(() => {
 const removeFromCart = (item) => {
   cart.remove(item);
 };
-
+onMounted(async () => {
+  const id = route.params.id; // Get the id from the route parameters
+  const response = await fetch(`http://localhost:3000/api/products/${id}`);
+  if (!response.ok) {
+    throw new Error(`HTTP error! status: ${response.status}`);
+  }
+  const data = await response.json();
+  product.value = data;
+  });
 </script>
 
 <style scoped>
@@ -121,7 +130,6 @@ const removeFromCart = (item) => {
   padding-left: 40px;
   margin-bottom: 0px;
 }
-
 .cart-table {
   display: flex;
   align-items: center;
@@ -129,12 +137,10 @@ const removeFromCart = (item) => {
   gap: 20px;
   margin-bottom: 2rem;
 }
-
 .item-row {
   display: flex;
   gap: 5px;
 }
-
 .pi-trash {
   background-color: transparent;
   color: #007bff;
@@ -150,33 +156,28 @@ const removeFromCart = (item) => {
   border: none;
   margin-right: auto;
 }
-
 .pi-minus {
   background-color: transparent;
   color: #007bff;
   border: none;
   width: 0%;
 }
-
 .item-details {
   display: flex;
   flex-direction: column;
   align-items: flex-start; /* Align items to the left */
 }
-
 .item-name {
   display: flex;
   font-size: 22px;
   font-weight: 500;
 }
-
 .item-price {
   display: flex;
   align-items: right;
   font-size: 22px;
   font-weight: 500;
   margin-top: -100px;
-
   justify-content: flex-end;
 }
 .item-price-trash {
@@ -184,17 +185,14 @@ const removeFromCart = (item) => {
   flex-direction: column;
   align-items: flex-end;
 }
-
 .cart-image {
   width: 102px;
   height: 102px;
 }
-
 .product-card {
   width: 172px;
   margin-bottom: 10px;
 }
-
 .button-container {
   display: flex;
   justify-content: center;
@@ -204,12 +202,10 @@ const removeFromCart = (item) => {
   gap: 10px;
   flex-direction: column;
 }
-
 .empty-cart {
   display: flex;
   justify-content: center;
 }
-
 .router-link {
   display: inline-block;
   margin-top: 10px;
