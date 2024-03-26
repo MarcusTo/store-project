@@ -47,16 +47,11 @@ const { t } = useI18n();
 const products = ref([]);
 onMounted(async () => {
   try {
-    const category = "airpods";
-    const response = await fetch(
-      `http://localhost:8080/getProducts?category=${category}`
-    );
-    const response = await fetch(`http://localhost:8080/getProducts?category=${category}`);
-    const data = await response.json();
-    products.value = data;
-    products.value = data.filter(product => product.category === 'airpods'); // Filter products by category
+    const response = await fetch('http://localhost:3000/api/products');
+    const data: Product[] = await response.json();
+    products.value = data.filter(product => product.category === 'airpods');
   } catch (error) {
-    console.error("Error:", error);
+    console.error('Error:', error);
   }
 });
 </script>

@@ -41,14 +41,14 @@ interface Product {
   image: string;
   price: number; 
 }
-const products = ref<Product[]>([]); // Update the type of 'products' ref
+const products = ref<Product[]>([]);
 onMounted(async () => {
   try {
-    const response = await fetch("http://localhost:8080/getProducts");
-    const data = await response.json();
-    products.value = data.filter((product: { category: string; }) => product.category === 'iphone');
+    const response = await fetch('http://localhost:3000/api/products');
+    const data: Product[] = await response.json();
+    products.value = data.filter(product => product.category === 'iphone');
   } catch (error) {
-    console.error("Error:", error);
+    console.error('Error:', error);
   }
 });
 const handleSearch = () => {};
