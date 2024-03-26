@@ -10,18 +10,17 @@
   >
     {{ t("products.iphone") }}
   </h2>
-  <SearchComp @search="handleSearch"/>
+  <SearchComp @search="handleSearch" />
   <hr />
   <div class="product-cards">
-    <div v-for="product in products" :key="product.id" class="product-card">
+    <div v-for="product in products" :key="product._id" class="product-card">
       <img :src="product.image" style="width: 200px; height: 200px" />
       <p style="font-size: 20px; font-weight: 500; white-space: nowrap">
         {{ product.name }}
       </p>
-      <p style="font-size: 13px">{{ product.category }}</p>
       <router-link
         style="color: #0051a8"
-        :to="`/iphone/new-or-used/${product.name}/${product.id}`"
+        :to="`/iphone/new-or-used/${product.name}/${product._id}`"
       >
         {{ t("products.buy") }} €{{ product.price }}
       </router-link>
@@ -31,22 +30,24 @@
 </template>
 
 <script setup lang="ts">
+import { ref, onMounted } from 'vue';
 import NavBarComp from "@/components/NavBarComp.vue";
 import FooterComp from "@/components/FooterComp.vue";
 import SearchComp from "@/components/SearchComp.vue";
 import { useI18n } from "vue-i18n";
-import { sampleProducts } from "@/data.ts";
-
 const { t } = useI18n();
-const products = sampleProducts;
-
-const handleSearch = () =>{
-  
-}
-
-
+const products = ref([]); 
+onMounted(async () => {
+  try {
+    const response = await fetch("http://localhost:8080/getProducts");
+    const data = await response.json();
+    products.value = data.filter(product => product.category === 'iphone'); // Filter products by category
+  } catch (error) {
+    console.error("Error:", error);
+  }
+});
+const handleSearch = () => {};
 </script>
-
 <style scoped>
 .product-cards {
   display: grid;
@@ -61,7 +62,6 @@ const handleSearch = () =>{
   text-align: center;
   width: 172px;
 }
-
 .product-card img {
   width: 100%;
 }
