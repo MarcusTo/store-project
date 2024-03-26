@@ -1,76 +1,129 @@
 <template>
-    <NavBarComp />
-    <h2
-      style="
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-size: 32px;
-      "
-    >
-      {{ t("products.airpods") }}
-    </h2>
-    <SearchComp />
-    <hr />
-    <div class="product-cards">
-      <div v-for="product in products" :key="product._id" class="product-card">
-        <img :src="product.image" style="width: 200px; height: 200px" />
-        <p
-          style="
-            font-size: 20px;
-            font-weight: 500;
-            white-space: normal;
-            word-wrap: break-word;
-            overflow-wrap: break-word;
-            width: 100%;
-          "
-        >
-          {{ product.name }}
+  <NavBarComp />
+  <h2
+    style="
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 32px;
+    "
+  >
+    {{ product?.name }}
+  </h2>
+  <div class="product-grid">
+    <div v-for="product in products" :key="product._id" class="product-card">
+      <img :src="product.image" alt="Product Image" class="product-image" />
+      <div class="product-details">
+        <div class="form">
+            <p>{{ product.description }}</p>
+        </div>
+        <p style="font-weight: 500; font-size: 40px">
+         £ {{ product.price.toFixed(2) }}
         </p>
-        <router-link
-          style="color: #0051a8"
-          :to="`/airpods/${product.name}/${product._id}`"
-        >
-          {{ t("products.buy") }} €{{ product.price }}
-        </router-link>
+        <Button class="button" @click="addToCart">
+          {{ t("cart.addToCart") }}
+        </Button>
       </div>
     </div>
-    <FooterComp />
-  </template>
-  <script setup lang="ts">
-  import { ref, onMounted } from "vue";
-  import NavBarComp from "@/components/NavBarComp.vue";
-  import FooterComp from "@/components/FooterComp.vue";
-  import SearchComp from "@/components/SearchComp.vue";
-  import { useI18n } from "vue-i18n";
-  const { t } = useI18n();
-  const products = ref([]);
-  onMounted(async () => {
-    try {
-      const category = "airpods";
-      const response = await fetch(`http://localhost:8080/getProducts?category=${category}`);
-      const data = await response.json();
-      products.value = data.filter(product => product.category === 'airpods'); // Filter products by category
-    } catch (error) {
-      console.error("Error:", error);
+  </div>
+  <FooterComp />
+</template>
+<script setup lang="ts">
+import { ref, onMounted } from "vue";
+import Button from "primevue/button";
+import NavBarComp from "@/components/NavBarComp.vue";
+import FooterComp from "@/components/FooterComp.vue";
+import { useRoute } from "vue-router";
+import { useI18n } from "vue-i18n";
+import { useCartStore } from "@/stores/cart";
+import { useRouter } from "vue-router";
+const { t } = useI18n();
+const route = useRoute();
+const router = useRouter();
+const selectedColor = ref(null);
+const selectedMemory = ref(null);
+const cart = useCartStore();
+const addToCart = () => {
+  const cartItem = {
+    ...product.value,
+    selectedColor: selectedColor.value,
+    selectedMemory: selectedMemory.value,
+  };
+  cart.addToCart(cartItem);
+  router.push("/CartView");
+};
+const products = ref([]);
+onMounted(async () => {
+  try {
+    const category = "airpods";
+    const url = `http://localhost:8080/getProducts`;
+    console.log("Fetch URL:", url); // Log the fetch URL
+    const response = await fetch(url);
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
     }
-  });
-  </script>
-  <style scoped>
-  .product-cards {
-    display: grid;
-    margin-left: 2rem;
-    justify-content: center;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 10rem;
-    margin-bottom: 20px;
-    margin-top: 40px;
+    const data = await response.json();
+    products.value = data;
+  } catch (error) {
+    console.error("Error:", error);
   }
-  .product-card {
-    text-align: center;
-    width: 172px;
+});
+</script>
+<style scoped>
+.product-card {
+  display: flex;
+  align-items: center;
+  gap: 10rem;
+  width: 65%;
+}
+.transparent {
+  opacity: 0.5;
+}
+.product-details {
+  margin-left: 60px;
+}
+.membutton {
+  margin-right: 2px;
+  height: 36px;
+  background-color: #0066cc;
+  border: 2px solid #0066cc;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 600;
+  border-radius: 12px;
+  padding-left: 14px;
+  padding-right: 14px;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+.product-grid {
+  display: block;
+  width: 90%; /* Adjust the width as needed */
+  margin: auto; /* Center the grid */
+  padding: 10px 0px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  .product-image {
+    width: 468.5px;
+    height: 446.637px;
   }
-  .product-card img {
-    width: 100%;
-  }
-  </style>
+}
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+  height: 46px;
+  padding: 10px 0px;
+  font-size: 16px;
+  color: #fff;
+  background-color: #007bff;
+  border-radius: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.button:hover {
+  background-color: #0056b3;
+}
+</style>
