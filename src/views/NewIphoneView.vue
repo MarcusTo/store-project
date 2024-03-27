@@ -14,7 +14,15 @@
   </h2>
   <div class="product-grid">
     <div class="product-card" v-if="product" :key="product._id">
-      <img :src="product.image" alt="Product Image" class="product-image" />
+      <img
+        :src="
+          selectedColor.value
+            ? colorImageMapping[selectedColor.value]
+            : product.image
+        "
+        alt="Product Image"
+        class="product-image"
+      />
       <div class="product-details">
         <div class="form">
           <p style="font-size: 13px; font-weight: 500">VALI MÄLUMAHT</p>
@@ -41,8 +49,8 @@
                 'color-button-selected': selectedColor.value === color,
               }"
               :style="{ 'background-color': color }"
+              @click="selectedColor.value = color"
             >
-              @click="selectedColor.value = color" />
               {{ color }}
             </Button>
           </div>
@@ -81,6 +89,14 @@ const selectedMemory = ref({ value: null });
 
 const selectedColor = ref({ value: null });
 
+const colorImageMapping: Record<string, string> = {
+  Black: "/img/products/iphone/IP-15PMX-black-titanium.jpeg",
+  "#5f778a": "/img/products/iphone/IP-15PMX-blue-titanium.jpeg",
+  "#e5e5e5": "/img/products/iphone/IP-15PMX-white-titanium.jpeg",
+  Gray: "/img/products/iphone/IP-15PMX-natural-titanium.jpeg",
+  // Add more mappings as needed
+};
+
 const addToCart = () => {
   const cartItem = {
     ...product.value,
@@ -106,7 +122,6 @@ onMounted(async () => {
   product.value = data;
   console.log(product.value); // Add this line
 });
-
 </script>
 
 <style scoped>
@@ -143,7 +158,7 @@ onMounted(async () => {
   flex-wrap: wrap;
   gap: 10px;
 }
-.color-button{
+.color-button {
   margin-right: 2px;
   height: 36px;
   width: 36px;
