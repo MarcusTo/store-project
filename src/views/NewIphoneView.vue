@@ -40,9 +40,9 @@
               :class="{
                 'color-button-selected': selectedColor.value === color,
               }"
-              style="align-items: center; white-space: nowrap"
-              @click="selectedColor.value = color"
+              :style="{ 'background-color': color }"
             >
+              @click="selectedColor.value = color" />
               {{ color }}
             </Button>
           </div>
@@ -106,6 +106,7 @@ onMounted(async () => {
   product.value = data;
   console.log(product.value); // Add this line
 });
+
 </script>
 
 <style scoped>
@@ -139,20 +140,18 @@ onMounted(async () => {
 }
 .color {
   display: relative;
-  flex-wrap: wrap; 
-  gap: 10px; 
+  flex-wrap: wrap;
+  gap: 10px;
 }
 .color-button{
   margin-right: 2px;
   height: 36px;
-  background-color: #E5F2FF(210, 210, 210);
-  border: 2px solid;
-  color: #ffffff;
-  font-size: 13px;
+  width: 36px;
+  font-size: 0;
   font-weight: 600;
-  border-radius: 12px;
-  padding-left: 14px;
-  padding-right: 14px;
+  border-radius: 50%;
+  padding: 0;
+  border: 2px solid;
 }
 .color-button-selected {
   background-color: #0066cc;
