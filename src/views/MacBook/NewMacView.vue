@@ -13,7 +13,7 @@
       {{ product && product.name }}
     </h2>
     <div class="product-grid">
-      <div class="product-card" v-if="product" :key="product._id">
+      <div class="product-card" v-if="product" :key="product.id">
         <img :src="product.image" alt="Product Image" class="product-image" />
         <div class="product-details">
           <div class="form">

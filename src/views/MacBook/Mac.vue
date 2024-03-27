@@ -8,7 +8,7 @@
       font-size: 32px;
     "
   >
-    {{ t("products.iphone") }}
+    {{ t("products.mac") }}
   </h2>
   <SearchComp @search="handleSearch" />
   <hr />
@@ -20,7 +20,7 @@
       </p>
       <router-link
         style="color: #0051a8"
-        :to="`/iphone/${product._id}`"
+        :to="`/mac/${product._id}`"
       >
         {{ t("products.buy") }} €{{ product.price.toFixed(2) }}
       </router-link>
@@ -54,7 +54,7 @@ onMounted(async () => {
   try {
     const response = await fetch('http://localhost:3000/api/products');
     const data: Product[] = await response.json();
-    products.value = data.filter(product => product.category === 'iphone');
+    products.value = data.filter(product => product.category === 'mac');
   } catch (error) {
     console.error('Error:', error);
   }
