@@ -94,7 +94,6 @@ const colorImageMapping: Record<string, string> = {
   "#5f778a": "/img/products/iphone/IP-15PMX-blue-titanium.jpeg",
   "#e5e5e5": "/img/products/iphone/IP-15PMX-white-titanium.jpeg",
   Gray: "/img/products/iphone/IP-15PMX-natural-titanium.jpeg",
-  // Add more mappings as needed
 };
 
 const addToCart = () => {
