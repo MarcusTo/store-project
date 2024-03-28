@@ -25,8 +25,6 @@ export enum ROUTE_PATHS {
   LOGIN = "/login",
   REGISTER = "/register",
   ORDERS = "/orders",
-
-  
   ABOUT = "/about",
   CONTACT = "/contact",
 }
