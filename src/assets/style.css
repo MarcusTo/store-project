@@ -63,18 +63,37 @@ body,html{
 
 /* Dropdown Menu Styles */
 .dropdown {
-  position: relative; /* Establishes a positioning context for dropdown content */
-  display: inline-block; /* Ensures the dropdown doesn't take up more space than it needs */
+  position: relative; 
+  display: inline-block; 
+}
+
+/* Inside your <style scoped lang="scss"> block */
+.dropdown-content a {
+  color: black; 
+  padding: 10px; 
+  display: block; 
+  text-decoration: none; 
+  margin-bottom: 8px; 
+  border: 2px solid transparent; 
+  border-radius: 10px; 
+}
+
+/* Adjusting the hover state for visual feedback */
+.dropdown-content a:hover {
+  background-color: #f1f1f1; 
+  color: black; 
+  border-radius: 10px; 
+  transition: background-color 0.4s ease;
 }
 
 .dropdown-content {
-  display: none; /* Keeps dropdown content hidden by default */
+  display: none; 
   position: absolute;
-  background-color: #f9f9f9; /* Light background color for dropdown */
-  min-width: 100px; /* Increased width for a wider dropdown */
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2); /* Shadow for depth */
-  padding: 20px; /* Padding inside the dropdown for taller items */
-  border-radius: 10px; /* Rounded corners for the dropdown */
+  background-color: #f9f9f9; 
+  min-width: 100px;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2); 
+  padding: 20px; 
+  border-radius: 10px; 
   z-index: 1;
 }
 
@@ -82,7 +101,7 @@ body,html{
   display: none;
   position: absolute;
   background-color: #f9f9f9;
-  min-width: 100px;
+  min-width: 50px;
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
   padding: 20px;
   border-radius: 10px;
@@ -94,10 +113,10 @@ body,html{
 }
 
 .dropdown-content RouterLink:hover {
-  background-color: #f1f1f1; /* Light grey background on hover */
-  border-radius: 5px; /* Rounded corners for links on hover */
+  background-color: #f1f1f1; 
+  border-radius: 5px; 
 }
 
 .dropdown:hover .dropdown-content {
-  display: block; /* Displays the dropdown content on hover */
+  display: block; 
 }
