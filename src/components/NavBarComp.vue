@@ -2,25 +2,27 @@
   <div>
     <div class="navbar">
       <ul class="ul">
-    <li class="custom-list-item">
-      <RouterLink to="/">{{ $t("navbar.home") }}</RouterLink>
-    </li>
-    <!-- Dropdown Menu Trigger for Apple Products -->
-    <li class="custom-list-item dropdown">
-      <span class="dropdown-trigger">Apple Products</span> <!-- Dropdown Trigger -->
-      <!-- Dropdown Menu Content -->
-      <div class="dropdown-content">
-        <RouterLink to="/iphone">iPhone</RouterLink>
-        <p></p>
-        <RouterLink to="/airpods">AirPods</RouterLink>
-        <p></p>
-        <RouterLink to="/mac">Mac</RouterLink>
-      </div>
-    </li>
-    <li class="custom-list-item">
-      <RouterLink to="/services">{{ $t("navbar.repairs") }}</RouterLink>
-    </li>
-</ul>
+        <li class="custom-list-item">
+          <RouterLink to="/">{{ $t("navbar.home") }}</RouterLink>
+        </li>
+        <details class="custom-list-item">
+          <summary class="custom-summary" style="color:#c5c5c5 ;">Apple Tooted</summary>          
+          <ul class="dropdown-ul">
+            <li class="custom-list-item">
+              <RouterLink to="/iphone">{{ $t("navbar.iphone") }}</RouterLink>
+            </li>
+            <li class="custom-list-item">
+              <RouterLink to="/airpods">{{ $t("navbar.airpods") }}</RouterLink>
+            </li>
+            <li class="custom-list-item">
+              <RouterLink to="/mac">{{ $t("navbar.mac") }}</RouterLink>
+            </li>
+          </ul>
+        </details>
+        <li class="custom-list-item">
+          <RouterLink to="/services">{{ $t("navbar.repairs") }}</RouterLink>
+        </li>
+      </ul>
       <div class="navbar-user">
         <div>
           <ul style="list-style: none; margin: 0; padding: 0; display: flex">
@@ -65,13 +67,14 @@
           </ul>
         </div>
       </div>
-      <div>
+      <div class="cart-container">
         <button class="cart-button">
-          <RouterLink style="font-weight: 500;" to="/cartView" class="nav-bar__router-link">
-            <i
-              class="pi pi-shopping-bag"
-            >
-            </i>
+          <RouterLink
+            style="font-weight: 500;"
+            to="/cartView"
+            class="nav-bar__router-link"
+          >
+            <i class="pi pi-shopping-bag" style="margin-right: 5px;"> </i>
             {{ isCartEmpty ? "" : `${totalPrice.toFixed(2)} €` }}
           </RouterLink>
         </button>
@@ -102,13 +105,20 @@ const totalPrice = computed(() => {
 });
 </script>
 
-<style scoped lang="scss">
+<style scoped>
 .navbar {
+  position: relative; /* Add this line */
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  background-color: #1E1E1E; /* Dark grey background navbar background color */
+  align-items: flex-start;
+  background-color: #1e1e1e;
   font-size: 14px;
+}
+.navbar-user{
+  margin-top:24px
+}
+.cart-container{
+  margin-top: 15px;
 }
 a {
   font-weight: 400;
@@ -116,7 +126,7 @@ a {
   text-decoration: inherit;
 }
 a:hover {
-  color: #ffffff; /* Darker blue */
+  color: #ffffff; 
 }
 .cart-button {
   background-color: #0051a8;
@@ -125,21 +135,12 @@ a:hover {
   font-weight: 500;
 }
 
-.navbar-user {
-  padding-left: 2rem; /* Default to a small padding */
-  display: flex;
-  justify-content: flex-end;
-  color: #fff; /* White text color */
-}
-
-/* Increase padding when viewport is 600px or wider */
 @media screen and (min-width: 600px) {
   .navbar-user {
     padding-left: 8rem;
   }
 }
 
-/* Increase padding when viewport is 900px or wider */
 @media screen and (min-width: 900px) {
   .navbar-user {
     padding-left: 30rem;
@@ -156,10 +157,15 @@ a:hover {
   list-style: none;
   display: flex;
   gap: 16px;
+  
+}
+.dropdown-ul {
+  padding-left: 8px; 
+  margin-top: 5px;
 }
 
 .custom-list-item {
   padding: 10px;
-  color: #0070c9; /* Apple blue text color */
 }
+
 </style>
