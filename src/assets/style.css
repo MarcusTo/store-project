@@ -61,4 +61,43 @@ body,html{
 
 }
 
+/* Dropdown Menu Styles */
+.dropdown {
+  position: relative; /* Establishes a positioning context for dropdown content */
+  display: inline-block; /* Ensures the dropdown doesn't take up more space than it needs */
+}
 
+.dropdown-content {
+  display: none; /* Keeps dropdown content hidden by default */
+  position: absolute;
+  background-color: #f9f9f9; /* Light background color for dropdown */
+  min-width: 100px; /* Increased width for a wider dropdown */
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2); /* Shadow for depth */
+  padding: 20px; /* Padding inside the dropdown for taller items */
+  border-radius: 10px; /* Rounded corners for the dropdown */
+  z-index: 1;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 100px;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  padding: 20px;
+  border-radius: 10px;
+  z-index: 1;
+}
+
+.dropdown-trigger:hover + .dropdown-content {
+  display: block;
+}
+
+.dropdown-content RouterLink:hover {
+  background-color: #f1f1f1; /* Light grey background on hover */
+  border-radius: 5px; /* Rounded corners for links on hover */
+}
+
+.dropdown:hover .dropdown-content {
+  display: block; /* Displays the dropdown content on hover */
+}

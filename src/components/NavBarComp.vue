@@ -2,22 +2,25 @@
   <div>
     <div class="navbar">
       <ul class="ul">
-        <li class="custom-list-item">
-          <RouterLink to="/">{{ $t("navbar.home") }}</RouterLink>
-        </li>
-        <li class="custom-list-item">
-          <RouterLink to="/iphone">{{ $t("navbar.iphone") }}</RouterLink>
-        </li>
-        <li class="custom-list-item">
-          <RouterLink to="/airpods">{{ $t("navbar.airpods") }}</RouterLink>
-        </li>
-        <li class="custom-list-item">
-          <RouterLink to="/mac">{{ $t("navbar.mac") }}</RouterLink>
-        </li>
-        <li class="custom-list-item">
-          <RouterLink to="/services">{{ $t("navbar.repairs") }}</RouterLink>
-        </li>
-      </ul>
+    <li class="custom-list-item">
+      <RouterLink to="/">{{ $t("navbar.home") }}</RouterLink>
+    </li>
+    <!-- Dropdown Menu Trigger for Apple Products -->
+    <li class="custom-list-item dropdown">
+      <span class="dropdown-trigger">Apple Products</span> <!-- Dropdown Trigger -->
+      <!-- Dropdown Menu Content -->
+      <div class="dropdown-content">
+        <RouterLink to="/iphone">iPhone</RouterLink>
+        <p></p>
+        <RouterLink to="/airpods">AirPods</RouterLink>
+        <p></p>
+        <RouterLink to="/mac">Mac</RouterLink>
+      </div>
+    </li>
+    <li class="custom-list-item">
+      <RouterLink to="/services">{{ $t("navbar.repairs") }}</RouterLink>
+    </li>
+</ul>
       <div class="navbar-user">
         <div>
           <ul style="list-style: none; margin: 0; padding: 0; display: flex">
