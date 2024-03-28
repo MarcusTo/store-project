@@ -10,11 +10,11 @@ export enum ROUTE_PATHS {
   // USED_IPHONE="/iphone/used/:productName/:productId",
 
   AIRPODS = "/airpods",
-  // NEW_USED_AIRPODS= "/airpods/:productName/:id",
   NEW_AIRPODS="/airpods/:id",
+  // NEW_USED_AIRPODS= "/airpods/:productName/:id",
 
   MAC = "/mac",
-  NEW_MAC="/mac/new/:productName/:productId",
+  NEW_MAC="/mac/:id",
   // NEW_USED_MAC= "/mac/new-or-used/:productName/:productId",
   // USED_MAC="/mac/used/:productName/:productId",
   
@@ -25,8 +25,6 @@ export enum ROUTE_PATHS {
   LOGIN = "/login",
   REGISTER = "/register",
   ORDERS = "/orders",
-
-  
   ABOUT = "/about",
   CONTACT = "/contact",
 }

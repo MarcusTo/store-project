@@ -14,7 +14,15 @@
   </h2>
   <div class="product-grid">
     <div class="product-card" v-if="product" :key="product._id">
-      <img :src="product.image" alt="Product Image" class="product-image" />
+      <img
+        :src="
+          selectedColor.value
+            ? colorImageMapping[selectedColor.value]
+            : product.image
+        "
+        alt="Product Image"
+        class="product-image"
+      />
       <div class="product-details">
         <div class="form">
           <p style="font-size: 13px; font-weight: 500">VALI MÄLUMAHT</p>
@@ -40,7 +48,7 @@
               :class="{
                 'color-button-selected': selectedColor.value === color,
               }"
-              style="align-items: center; white-space: nowrap"
+              :style="{ 'background-color': color }"
               @click="selectedColor.value = color"
             >
               {{ color }}
@@ -80,6 +88,13 @@ const product = ref(null);
 const selectedMemory = ref({ value: null });
 
 const selectedColor = ref({ value: null });
+
+const colorImageMapping: Record<string, string> = {
+  Black: "/img/products/iphone/IP-15PMX-black-titanium.jpeg",
+  "#5f778a": "/img/products/iphone/IP-15PMX-blue-titanium.jpeg",
+  "#e5e5e5": "/img/products/iphone/IP-15PMX-white-titanium.jpeg",
+  Gray: "/img/products/iphone/IP-15PMX-natural-titanium.jpeg",
+};
 
 const addToCart = () => {
   const cartItem = {
@@ -139,20 +154,18 @@ onMounted(async () => {
 }
 .color {
   display: relative;
-  flex-wrap: wrap; 
-  gap: 10px; 
+  flex-wrap: wrap;
+  gap: 10px;
 }
-.color-button{
+.color-button {
   margin-right: 2px;
   height: 36px;
-  background-color: #E5F2FF(210, 210, 210);
-  border: 2px solid;
-  color: #ffffff;
-  font-size: 13px;
+  width: 36px;
+  font-size: 0;
   font-weight: 600;
-  border-radius: 12px;
-  padding-left: 14px;
-  padding-right: 14px;
+  border-radius: 50%;
+  padding: 0;
+  border: 2px solid;
 }
 .color-button-selected {
   background-color: #0066cc;
