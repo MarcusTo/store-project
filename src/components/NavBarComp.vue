@@ -5,9 +5,15 @@
         <li class="custom-list-item">
           <RouterLink to="/">{{ $t("navbar.home") }}</RouterLink>
         </li>
-        <details class="custom-list-item">
-          <summary class="custom-summary" style="color:#c5c5c5 ;">Apple Tooted</summary>          
-          <ul class="dropdown-ul">
+        <li class="custom-list-item">
+          <div
+            @click="handleClick"
+            class="custom-summary"
+            style="color: #c5c5c5; cursor: pointer"
+          >
+            Apple Tooted
+          </div>
+          <ul class="dropdown-ul" v-show="isDropdownOpen">
             <li class="custom-list-item">
               <RouterLink to="/iphone">{{ $t("navbar.iphone") }}</RouterLink>
             </li>
@@ -18,7 +24,7 @@
               <RouterLink to="/mac">{{ $t("navbar.mac") }}</RouterLink>
             </li>
           </ul>
-        </details>
+        </li>
         <li class="custom-list-item">
           <RouterLink to="/services">{{ $t("navbar.repairs") }}</RouterLink>
         </li>
@@ -70,11 +76,11 @@
       <div class="cart-container">
         <button class="cart-button">
           <RouterLink
-            style="font-weight: 500;"
+            style="font-weight: 500"
             to="/cartView"
             class="nav-bar__router-link"
           >
-            <i class="pi pi-shopping-bag" style="margin-right: 5px;"> </i>
+            <i class="pi pi-shopping-bag" style="margin-right: 5px"> </i>
             {{ isCartEmpty ? "" : `${totalPrice.toFixed(2)} €` }}
           </RouterLink>
         </button>
@@ -83,7 +89,7 @@
   </div>
 </template>
 <script setup lang="ts">
-import { computed } from "vue";
+import { ref,computed } from "vue";
 import { useCartStore } from "@/stores/cart";
 import { setLocale } from "@/config/18n.config";
 import i18n from "@/config/18n.config";
@@ -91,7 +97,12 @@ import i18n from "@/config/18n.config";
 const activeLang = computed(() => {
   return i18n.global.locale.value;
 });
+let isDropdownOpen = ref(false);
 
+const handleClick = () => {
+  isDropdownOpen.value = !isDropdownOpen.value;
+  console.log('Dropdown clicked, isDropdownOpen:', isDropdownOpen.value);
+};
 const cart = useCartStore();
 
 const isCartEmpty = computed(() => {
@@ -114,10 +125,10 @@ const totalPrice = computed(() => {
   background-color: #1e1e1e;
   font-size: 14px;
 }
-.navbar-user{
-  margin-top:24px
+.navbar-user {
+  margin-top: 24px;
 }
-.cart-container{
+.cart-container {
   margin-top: 15px;
 }
 a {
@@ -126,7 +137,7 @@ a {
   text-decoration: inherit;
 }
 a:hover {
-  color: #ffffff; 
+  color: #ffffff;
 }
 .cart-button {
   background-color: #0051a8;
@@ -157,15 +168,13 @@ a:hover {
   list-style: none;
   display: flex;
   gap: 16px;
-  
 }
 .dropdown-ul {
-  padding-left: 8px; 
+  padding-left: 8px;
   margin-top: 5px;
 }
 
 .custom-list-item {
   padding: 10px;
 }
-
 </style>
